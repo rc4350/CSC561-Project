@@ -2,7 +2,11 @@ package Attack;
 
 import static org.junit.Assert.*;
 
+
+
 import org.junit.Test;
+
+import Type.PkmnType;
 
 public class TestAttack
 {
@@ -30,13 +34,13 @@ public class TestAttack
 		attk.setSpeed(3);
 		assertEquals(3, attk.getSpeed());
 	}
-	
+
 	@Test
 	public void testTypeGetSet()
 	{
 		Attack attk = new Attack();
-		assertEquals('F', attk.getType());
-		attk.setType('W');
-		assertEquals('W', attk.getType());
+		assertEquals(PkmnType.FIRE, attk.getType());
+		attk.setType(PkmnType.WATER);
+		assertEquals(PkmnType.WATER, attk.getType());
 	}
 }

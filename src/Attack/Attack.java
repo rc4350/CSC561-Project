@@ -1,5 +1,7 @@
 package Attack;
 
+import Type.PkmnType;
+
 public class Attack
 {
 	private int damage;
@@ -11,7 +13,7 @@ public class Attack
 		//defaults
 		damage = 10;
 		speed = 1;
-		type = 'F';
+		type = PkmnType.FIRE;
 	}
 	/**
 	 * 
