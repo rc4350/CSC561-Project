@@ -17,12 +17,15 @@ public class Attack
 		type = PkmnType.FIRE;
 	}
 	
-	public Attack(int tp, int dmg, int spd)
+	public Attack(String n, char tp, int dmg, int spd)
 	{
 		//defaults
+		name = n;
+		type = tp;
 		damage = dmg;
 		speed = spd;
-		if(tp == 1)
+		
+	/**	if(tp == 1)
 		{
 			type = PkmnType.FIRE;
 			
@@ -33,7 +36,7 @@ public class Attack
 		}else if(tp == 3)
 		{
 			type = PkmnType.GRASS;
-		}
+		}*/
 	}
 	
 	/**
