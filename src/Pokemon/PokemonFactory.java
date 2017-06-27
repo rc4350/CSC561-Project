@@ -25,70 +25,90 @@ public class PokemonFactory
 	public Pokemon getBulbasaur() throws IOException
 	{
 		Pokemon poke = new Pokemon("Bulbasaur", 170, new GrassType());
-		poke.setImageIcon(buildIcon("img/001-Bulbasaur-con.png"));
+		poke.setImageIcon(buildIcon("img/001-Bulbasaur-icon.png"));
 		return poke;
 	}
 
 	public Pokemon getIvySaur() throws IOException
 	{
 		Pokemon poke = new Pokemon("Ivysaur", 230, new GrassType());
-		poke.setImageIcon(buildIcon("img/002-Ivysaur-con.png"));
+		poke.setImageIcon(buildIcon("img/002-Ivysaur-icon.png"));
 		return poke;
 	}
 
-	public Pokemon getVenuSaur()
+	public Pokemon getVenuSaur() throws IOException
 	{
-		return new Pokemon("Venusaur", 320, new GrassType());
+		Pokemon poke =  new Pokemon("Venusaur", 320, new GrassType());
+		poke.setImageIcon(buildIcon("img/003-Venusaur-icon.png"));
+		return poke;
 	}
 
-	public Pokemon getCaterpie()
+	public Pokemon getCaterpie() throws IOException
 	{
-		return new Pokemon("Caterpie", 160, new GrassType());
+		Pokemon poke = new Pokemon("Caterpie", 160, new GrassType());
+		poke.setImageIcon(buildIcon("img/010-Caterpie-icon.png"));
+		return poke;
 	}
 	/*
 	 * fire types
 	 */
-	public Pokemon getCharmander()
+	public Pokemon getCharmander() throws IOException
 	{
-		return new Pokemon("Charmander", 170, new FireType());
+		Pokemon poke = new Pokemon("Charmander", 170, new FireType());
+		poke.setImageIcon(buildIcon("img/004-Charmander-icon.png"));
+		return poke;
 	}
 
-	public Pokemon getCharmeleon()
+	public Pokemon getCharmeleon() throws IOException
 	{
-		return new Pokemon("Charmeleon", 230, new FireType());
+		Pokemon poke =  new Pokemon("Charmeleon", 230, new FireType());
+		poke.setImageIcon(buildIcon("img/005-Charmeleon-icon.png"));
+		return poke;
 	}
 
-	public Pokemon getCharizard()
+	public Pokemon getCharizard() throws IOException
 	{
-		return new Pokemon("Charizard", 320, new FireType());
+		Pokemon poke =  new Pokemon("Charizard", 320, new FireType());
+		poke.setImageIcon(buildIcon("img/006-Charizard-icon.png"));
+		return poke;
 	}
 
-	public Pokemon getVulpix()
+	public Pokemon getVulpix() throws IOException
 	{
-		return new Pokemon("Vulpix", 160, new FireType());
+		Pokemon poke =  new Pokemon("Vulpix", 160, new FireType());
+		poke.setImageIcon(buildIcon("img/037-Vulpix-icon.png"));
+		return poke;
 	}
 	/*
 	 * water types
 	 */
 
-	public Pokemon getSquirtle()
+	public Pokemon getSquirtle() throws IOException
 	{
-		return new Pokemon("Squirtle", 170, new WaterType());
+		Pokemon poke =  new Pokemon("Squirtle", 170, new WaterType());
+		poke.setImageIcon(buildIcon("img/007-Squirtle-icon.png"));
+		return poke;
 	}
 
-	public Pokemon getWartortle()
+	public Pokemon getWartortle() throws IOException
 	{
-		return new Pokemon("Wartortle", 230, new WaterType());
+		Pokemon poke =  new Pokemon("Wartortle", 230, new WaterType());
+		poke.setImageIcon(buildIcon("img/008-Wartortle-icon.png"));
+		return poke;
 	}
 
-	public Pokemon getBlastoise()
+	public Pokemon getBlastoise() throws IOException
 	{
-		return new Pokemon("Blastoise", 320, new WaterType());
+		Pokemon poke = new Pokemon("Blastoise", 320, new WaterType());
+		poke.setImageIcon(buildIcon("img/009-Blastoise-icon.png"));
+		return poke;
 	}
 
-	public Pokemon getPoliwag()
+	public Pokemon getPoliwag() throws IOException
 	{
-		return new Pokemon("Poliwag", 160, new WaterType());
+		Pokemon poke =  new Pokemon("Poliwag", 160, new WaterType());
+		poke.setImageIcon(buildIcon("img/060-Poliwag-icon.png"));
+		return poke;
 	}
 
 	/**
@@ -99,7 +119,7 @@ public class PokemonFactory
 	 */
 	protected ImageIcon buildIcon(String path) throws IOException
 	{
-		BufferedImage bi = ImageIO.read(new File("img/missingnoIcon.png"));
+		BufferedImage bi = ImageIO.read(new File(path));
 		return new ImageIcon(bi);
 	}
 	
