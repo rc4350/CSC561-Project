@@ -1,4 +1,11 @@
 package Pokemon;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+
 /**
  * creates instances of pokemon with predetermined values
  * @author Ryan Campbell
@@ -15,14 +22,18 @@ public class PokemonFactory
 	/*
 	 * grass types
 	 */
-	public Pokemon getBulbasaur()
+	public Pokemon getBulbasaur() throws IOException
 	{
-		return new Pokemon("Bulbasaur", 170, new GrassType());
+		Pokemon poke = new Pokemon("Bulbasaur", 170, new GrassType());
+		poke.setImageIcon(buildIcon("img/001-Bulbasaur-con.png"));
+		return poke;
 	}
 
-	public Pokemon getIvySaur()
+	public Pokemon getIvySaur() throws IOException
 	{
-		return new Pokemon("Ivysaur", 230, new GrassType());
+		Pokemon poke = new Pokemon("Ivysaur", 230, new GrassType());
+		poke.setImageIcon(buildIcon("img/002-Ivysaur-con.png"));
+		return poke;
 	}
 
 	public Pokemon getVenuSaur()
@@ -78,6 +89,18 @@ public class PokemonFactory
 	public Pokemon getPoliwag()
 	{
 		return new Pokemon("Poliwag", 160, new WaterType());
+	}
+
+	/**
+	 * accepts a string containing the image path and creates an image icon
+	 * @param string
+	 * @return
+	 * @throws IOException 
+	 */
+	protected ImageIcon buildIcon(String path) throws IOException
+	{
+		BufferedImage bi = ImageIO.read(new File("img/missingnoIcon.png"));
+		return new ImageIcon(bi);
 	}
 	
 }

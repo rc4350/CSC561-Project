@@ -2,6 +2,10 @@ package Pokemon;
 
 import static org.junit.Assert.*;
 
+import java.io.IOException;
+
+import javax.swing.ImageIcon;
+
 import org.junit.Test;
 
 import Type.FireType;
@@ -19,7 +23,7 @@ public class TestPokemonFactory
 	}
 
 	@Test
-	public void testBulbasaur()
+	public void testBulbasaur() throws IOException
 	{
 		PokemonFactory pf = new PokemonFactory();
 		Pokemon br;
@@ -28,10 +32,11 @@ public class TestPokemonFactory
 		assertEquals(170, br.getCurrentHP());
 		assertEquals("Bulbasaur", br.getName());
 		assertTrue(br.getType() instanceof GrassType);
+		assertNotNull(br.getImageIcon());
 	}
 	
 	@Test
-	public void testIvysaur()
+	public void testIvysaur() throws IOException
 	{
 		PokemonFactory pf = new PokemonFactory();
 		Pokemon br;
@@ -40,6 +45,7 @@ public class TestPokemonFactory
 		assertEquals(230, br.getCurrentHP());
 		assertEquals("Ivysaur", br.getName());
 		assertTrue(br.getType() instanceof GrassType);
+		assertNotNull(br.getImageIcon());
 	}
 	@Test
 	public void testVenusaur()
@@ -51,6 +57,7 @@ public class TestPokemonFactory
 		assertEquals(320, br.getCurrentHP());
 		assertEquals("Venusaur", br.getName());
 		assertTrue(br.getType() instanceof GrassType);
+		assertNotNull(br.getImageIcon());
 	}
 	@Test
 	public void testCaterpie()
@@ -62,6 +69,7 @@ public class TestPokemonFactory
 		assertEquals(160, br.getCurrentHP());
 		assertEquals("Caterpie", br.getName());
 		assertTrue(br.getType() instanceof GrassType);
+		assertNotNull(br.getImageIcon());
 	}
 	
 	@Test
@@ -74,6 +82,7 @@ public class TestPokemonFactory
 		assertEquals(170, br.getCurrentHP());
 		assertEquals("Charmander", br.getName());
 		assertTrue(br.getType() instanceof FireType);
+		assertNotNull(br.getImageIcon());
 	}
 	
 	@Test
@@ -86,6 +95,7 @@ public class TestPokemonFactory
 		assertEquals(230, br.getCurrentHP());
 		assertEquals("Charmeleon", br.getName());
 		assertTrue(br.getType() instanceof FireType);
+		assertNotNull(br.getImageIcon());
 	}
 	
 	@Test
@@ -98,6 +108,7 @@ public class TestPokemonFactory
 		assertEquals(320, br.getCurrentHP());
 		assertEquals("Charizard", br.getName());
 		assertTrue(br.getType() instanceof FireType);
+		assertNotNull(br.getImageIcon());
 	}
 	@Test
 	public void testVulpix()
@@ -109,6 +120,7 @@ public class TestPokemonFactory
 		assertEquals(160, br.getCurrentHP());
 		assertEquals("Vulpix", br.getName());
 		assertTrue(br.getType() instanceof FireType);
+		assertNotNull(br.getImageIcon());
 	}
 	
 	@Test
@@ -121,6 +133,7 @@ public class TestPokemonFactory
 		assertEquals(170, br.getCurrentHP());
 		assertEquals("Squirtle", br.getName());
 		assertTrue(br.getType() instanceof WaterType);
+		assertNotNull(br.getImageIcon());
 	}
 	@Test
 	public void testWartortle()
@@ -132,6 +145,7 @@ public class TestPokemonFactory
 		assertEquals(230, br.getCurrentHP());
 		assertEquals("Wartortle", br.getName());
 		assertTrue(br.getType() instanceof WaterType);
+		assertNotNull(br.getImageIcon());
 	}
 	
 	@Test
@@ -144,6 +158,7 @@ public class TestPokemonFactory
 		assertEquals(320, br.getCurrentHP());
 		assertEquals("Blastoise", br.getName());
 		assertTrue(br.getType() instanceof WaterType);
+		assertNotNull(br.getImageIcon());
 	}
 	
 	@Test
@@ -156,5 +171,14 @@ public class TestPokemonFactory
 		assertEquals(160, br.getCurrentHP());
 		assertEquals("Poliwag", br.getName());
 		assertTrue(br.getType() instanceof WaterType);
+		assertNotNull(br.getImageIcon());
+	}
+	
+	@Test
+	public void testBuildIcon() throws IOException
+	{
+		PokemonFactory pf = new PokemonFactory();
+		ImageIcon missIcon = pf.buildIcon("img/missingnoIcon.png");
+		assertNotNull(missIcon);
 	}
 }

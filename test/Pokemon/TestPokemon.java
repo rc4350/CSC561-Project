@@ -113,9 +113,23 @@ public class TestPokemon
 		ImageIcon missIcon = new ImageIcon(mbi);
 		assertNotNull(missIcon);
 		Pokemon poke = new Pokemon("Missingno", 240);
-		testFrame tf = new testFrame(missIcon);
+		poke.setImageIcon(missIcon);
+		assertEquals(missIcon, poke.getImageIcon());
+		testFrame tf = new testFrame(poke.getImageIcon());
 		tf.makeVisable();
 		assertEquals(JOptionPane.YES_OPTION, JOptionPane.showConfirmDialog(null, "Does icon display correctly?"));
+		
+	}
+	@Test
+	public void testNullImage() throws IOException
+	{
+		BufferedImage mbi = ImageIO.read(new File("img/missingnoIcon.png"));
+		ImageIcon missIcon = new ImageIcon(mbi);
+		assertNotNull(missIcon);
+		Pokemon poke = new Pokemon("Missingno", 240);
+		assertNull(poke.getImageIcon());
+		poke.setImageIcon(null);
+		assertNull(poke.getImageIcon());
 		
 	}
 	

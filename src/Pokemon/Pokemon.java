@@ -180,5 +180,26 @@ public class Pokemon
 		}
 		
 	}
+	/**
+	 * sets the icon for the pokemon
+	 * @param newImage ImageIcon for pokemon
+	 */
+	public void setImageIcon(ImageIcon newImage)
+	{
+		if(newImage != null)
+		{
+			myImage = newImage;
+		}
+		
+	}
+	/**
+	 * gets the pokemon's image
+	 * @return pokemon's myImage
+	 */
+	public ImageIcon getImageIcon()
+	{
+		
+		return myImage;
+	}
 
 }
