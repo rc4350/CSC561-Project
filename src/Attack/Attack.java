@@ -15,6 +15,26 @@ public class Attack
 		speed = 1;
 		type = PkmnType.FIRE;
 	}
+	
+	public Attack(int tp, int dmg, int spd)
+	{
+		//defaults
+		damage = dmg;
+		speed = spd;
+		if(tp == 1)
+		{
+			type = PkmnType.FIRE;
+			
+		}else if(tp == 2)
+		{
+			type = PkmnType.WATER;
+			
+		}else if(tp == 3)
+		{
+			type = PkmnType.GRASS;
+		}
+	}
+	
 	/**
 	 * 
 	 * @return the ammount of base damage the attack does
