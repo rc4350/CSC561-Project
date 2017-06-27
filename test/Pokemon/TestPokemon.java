@@ -6,14 +6,11 @@ import java.awt.BorderLayout;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-
 import org.junit.Test;
 
 import Attack.Attack;
@@ -108,10 +105,11 @@ public class TestPokemon
 		assertEquals(water, pokew.getType());
 	}
 	
-	/*@Test
+	@Test
 	public void testImageIconGetSet() throws IOException
 	{
-		BufferedImage mbi = ImageIO.read(new File("img\\missingnoIcon.png"));
+		
+		BufferedImage mbi = ImageIO.read(new File("img/missingnoIcon.png"));
 		ImageIcon missIcon = new ImageIcon(mbi);
 		assertNotNull(missIcon);
 		Pokemon poke = new Pokemon("Missingno", 240);
@@ -119,7 +117,7 @@ public class TestPokemon
 		tf.makeVisable();
 		assertEquals(JOptionPane.YES_OPTION, JOptionPane.showConfirmDialog(null, "Does icon display correctly?"));
 		
-	}*/
+	}
 	
 	@Test
 	public void testTakeHit()
