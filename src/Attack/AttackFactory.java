@@ -10,8 +10,8 @@ public class AttackFactory
 	 * @param typeAttack
 	 * @return
 	 */
-//	public Attack attackFactory(int typeAttack){
-	/*
+	public Attack attackFactory(int typeAttack){
+	/
 	if(typeAttack == 1)
 	{
 		return new Attack(typeAttack, 100, 100);
@@ -27,14 +27,14 @@ public class AttackFactory
 	}
 	      
 	 return null;
-	 }*/
+	 }
 
-	public Attack getFireStrong()
+/*	public Attack getFireStrong()
 	{
 		//attack k = new Attack();
 		//setters
 		//return k
 		return new Attack("FireBlast", PkmnType.FIRE, 80, 1);
 		
-	}
+	}*/
 }
