@@ -43,4 +43,12 @@ public class TestAttack
 		attk.setType(PkmnType.WATER);
 		assertEquals(PkmnType.WATER, attk.getType());
 	}
+	@Test
+	public void testNameGetSet()
+	{
+		Attack attk = new Attack();
+		assertNull(attk.getName());
+		attk.setName("tackle");
+		assertEquals("tackle", attk.getName());
+	}
 }

@@ -7,6 +7,7 @@ public class Attack
 	private int damage;
 	private int speed;
 	private char type;
+	private String name;
 	
 	public Attack()
 	{
@@ -85,6 +86,25 @@ public class Attack
 	public void setType(char attktype)
 	{
 		type = attktype;	
+	}
+	/**
+	 * returns name of attack
+	 * @return name
+	 */
+	public Object getName()
+	{
+		return name;
+	}
+	/**
+	 * sets the name of attack
+	 * @param string name of attack
+	 */
+	public void setName(String newName)
+	{
+		if (newName != null)
+		{
+			name = newName;
+		}
 	}
 
 }
