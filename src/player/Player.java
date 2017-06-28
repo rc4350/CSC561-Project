@@ -42,6 +42,21 @@ public class Player
 	{
 		return active;
 	}
-	
 
+	/**
+	 * returns pokemon from team at specified index
+	 * @param index index
+	 * @return pokemon at index
+	 */
+	public Pokemon getPokemon(int index)
+	{
+		if(index < 0 || index>=team.size())
+		{
+			return null;
+		}
+		else
+			return team.get(index);
+	}
+	
+	
 }
