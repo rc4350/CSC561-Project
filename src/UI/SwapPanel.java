@@ -22,10 +22,10 @@ public class SwapPanel
 	private Pokemon selected;
 	
 	private ImageIcon pokemonIcon[];
-	private JButton pokemonButton[];
+	public JButton pokemonButton[];
 	private JLabel pokemonNameLabel[];
 	private JLabel pokemonHPLabel[];
-	private JButton backButton, confirmButton;
+	public JButton backButton, confirmButton;
 	
 	private CommandInterface pokemonButton1Command;
 	private CommandInterface pokemonButton2Command;
@@ -113,10 +113,9 @@ public class SwapPanel
 	 */
 	public void setSelected(Pokemon pokemon)
 	{
-		if(pokemon != null)
-		{
+		
 			selected = pokemon;
-		}
+
 		
 	}
 	/**
@@ -134,6 +133,46 @@ public class SwapPanel
 	public Player getPlayer()
 	{
 		return player;
+	}
+
+	/**
+	 * sets which buttons are enabled for panel on initial launch
+	 */
+	public void setEnablesInitial()
+	{
+		for(int i = 0; i<3; i++)
+		{
+			if(player.getPokemon(i) == player.getActive())
+			{
+				pokemonButton[i].setEnabled(false);
+			}
+			else
+			{
+				pokemonButton[i].setEnabled(true);
+			}
+		}
+		confirmButton.setEnabled(false);
+		
+	}
+
+	/**
+	 * sets which buttons are enabled after clicking a pokemon button
+	 */
+	public void setEnablesSelect()
+	{
+		for(int i = 0; i<3; i++)
+		{
+			if(player.getPokemon(i) == player.getActive() || player.getPokemon(i) == selected)
+			{
+				pokemonButton[i].setEnabled(false);
+			}
+			else
+			{
+				pokemonButton[i].setEnabled(true);
+			}
+		}
+		confirmButton.setEnabled(true);
+		
 	}
 	
 	
