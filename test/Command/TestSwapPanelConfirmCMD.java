@@ -1,4 +1,4 @@
-package UI;
+package Command;
 
 import static org.junit.Assert.*;
 
@@ -11,6 +11,7 @@ import org.junit.Test;
 import Command.CommandInterface;
 import Command.SwapPanelConfirmCMD;
 import Pokemon.PokemonFactory;
+import UI.SwapPanel;
 import player.Player;
 
 public class TestSwapPanelConfirmCMD

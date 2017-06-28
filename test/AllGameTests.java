@@ -3,6 +3,7 @@ import org.junit.runners.Suite;
 
 import Attack.TestAttack;
 import Attack.TestAttackFactory;
+import Command.TestSwapPanelConfirmCMD;
 import Pokemon.TestPokemon;
 import Pokemon.TestPokemonFactory;
 import Type.TestFireType;
@@ -10,7 +11,6 @@ import Type.TestGrassType;
 import Type.TestPkmnType;
 import Type.TestWaterType;
 import UI.TestSwapPanel;
-import UI.TestSwapPanelConfirmCMD;
 import gameworld.TestGameWorld;
 import player.TestPlayer;
 
