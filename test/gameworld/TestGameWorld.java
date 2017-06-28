@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import Attack.Attack;
 import Pokemon.Pokemon;
 import player.Player;
 
@@ -59,5 +60,47 @@ public class TestGameWorld
 		assertEquals(2,test.getPokemonListSize());
 		
 		
+	}
+	
+	@Test
+	public void testActionSetAttackP1()
+	{
+		GameWorld test = GameWorld.getInstance();
+		Attack attk = new Attack();
+		
+		test.setActionPlayer1Attack(attk);
+		assertEquals(1, test.getPlayer1Action());
+		assertEquals(attk, test.getPlayer1Attack());
+	}
+	@Test
+	public void testActionSetAttackP2()
+	{
+		GameWorld test = GameWorld.getInstance();
+		Attack attk = new Attack();
+		
+		test.setActionPlayer2Attack(attk);
+		assertEquals(1, test.getPlayer2Action());
+		assertEquals(attk, test.getPlayer2Attack());
+	}
+	
+	@Test
+	public void testActionSetPlayer1Swap()
+	{
+		GameWorld test = GameWorld.getInstance();
+		Pokemon poke = new Pokemon("Missingno", 10);
+		
+		test.setActionPlayer1Swap(poke);
+		assertEquals(2,  test.getPlayer1Action());
+		assertEquals(poke, test.getPlayer1Pokemon());
+	}
+	@Test
+	public void testActionSetPlayer2Swap()
+	{
+		GameWorld test = GameWorld.getInstance();
+		Pokemon poke = new Pokemon("Missingno", 10);
+		
+		test.setActionPlayer2Swap(poke);
+		assertEquals(2,  test.getPlayer2Action());
+		assertEquals(poke, test.getPlayer2Pokemon());
 	}
 }
