@@ -2,21 +2,26 @@ package Command;
 
 import javax.swing.JFrame;
 
+import Pokemon.Pokemon;
 import UI.SwapPanel;
 
 public class SwapPanelSelectCMD implements CommandInterface
 {
 
 	private SwapPanel swap;
-	public SwapPanelSelectCMD(SwapPanel sp)
+	private Pokemon assigned;
+	
+	public SwapPanelSelectCMD(SwapPanel sp, Pokemon poke)
 	{
 		swap = sp;
+		assigned = poke;
 	}
 
 	@Override
 	public void execute()
 	{
-		// TODO Auto-generated method stub
+		swap.setSelected(assigned);
+		swap.setEnablesSelect();
 
 	}
 

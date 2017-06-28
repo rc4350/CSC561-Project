@@ -28,6 +28,8 @@ public class GameWorld
 	private GameWorld()
 	{
 		pokemon = new ArrayList<Pokemon>();
+		checkp1Ready = false;
+		checkp2Ready = false;
 	}
 	
 	/**
@@ -154,6 +156,7 @@ public class GameWorld
 	{
 		player1Action = 1;
 		p1Attack = attk;
+		checkp1Ready = true;
 	}
 
 	/**
@@ -165,6 +168,7 @@ public class GameWorld
 		
 		player2Action = 1;
 		p2Attack = attk;
+		checkp2Ready = true;
 	}
 
 	/**
@@ -200,6 +204,7 @@ public class GameWorld
 	{
 		player1Action = 2;
 		p1Pokemon = poke;
+		checkp1Ready = true;
 		
 	}
 	/**
@@ -218,7 +223,24 @@ public class GameWorld
 	{
 		player2Action = 2;
 		p2Pokemon = poke;
+		checkp2Ready = true;
 		
+	}
+	/**
+	 * returns ready status of player 1
+	 * @return checkp1Ready
+	 */
+	public boolean getPlayer1ReadyStatus()
+	{
+		return checkp1Ready;
+	}
+	/**
+	 * returns ready status of player 2
+	 * @return checkp2Ready
+	 */
+	public boolean getPlayer2ReadyStatus()
+	{
+		return checkp2Ready;
 	}
 	
 	

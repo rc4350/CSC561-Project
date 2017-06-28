@@ -98,7 +98,64 @@ public class TestSwapPanel
 		SwapPanel swap1 = new SwapPanel(p1);
 		assertEquals(p1, swap1.getPlayer());
 	}
+	
+	@Test
+	public void testEnableInitial() throws IOException
+	{
+		Player p1 = new Player();
+		PokemonFactory pf = new PokemonFactory();
+		p1.addPokemon(pf.getBlastoise());
+		p1.addPokemon(pf.getCharizard());
+		p1.addPokemon(pf.getVenuSaur());
+		p1.changeActive(p1.getPokemon(0));
+		SwapPanel swap1 = new SwapPanel(p1);
+		
+		swap1.setEnablesInitial();
+		assertTrue(swap1.backButton.isEnabled());
+		assertFalse(swap1.confirmButton.isEnabled());
+		assertFalse(swap1.pokemonButton[0].isEnabled());
+		assertTrue(swap1.pokemonButton[1].isEnabled());
+		assertTrue(swap1.pokemonButton[2].isEnabled());
+		
+		p1.changeActive(p1.getPokemon(2));
+		swap1.setEnablesInitial();
+		assertTrue(swap1.backButton.isEnabled());
+		assertFalse(swap1.confirmButton.isEnabled());
+		assertFalse(swap1.pokemonButton[2].isEnabled());
+		assertTrue(swap1.pokemonButton[1].isEnabled());
+		assertTrue(swap1.pokemonButton[0].isEnabled());
+	}
+	@Test
+	public void testEnableSelect() throws IOException
+	{
+		Player p1 = new Player();
+		PokemonFactory pf = new PokemonFactory();
+		p1.addPokemon(pf.getBlastoise());
+		p1.addPokemon(pf.getCharizard());
+		p1.addPokemon(pf.getVenuSaur());
+		p1.changeActive(p1.getPokemon(0));
+		SwapPanel swap1 = new SwapPanel(p1);
+		
+		swap1.setSelected(p1.getPokemon(1));
+		swap1.setEnablesSelect();
+		assertTrue(swap1.backButton.isEnabled());
+		assertTrue(swap1.confirmButton.isEnabled());
+		assertFalse(swap1.pokemonButton[0].isEnabled());
+		assertFalse(swap1.pokemonButton[1].isEnabled());
+		assertTrue(swap1.pokemonButton[2].isEnabled());
+		
+		swap1.setSelected(p1.getPokemon(2));
+		swap1.setEnablesSelect();
+		assertTrue(swap1.backButton.isEnabled());
+		assertTrue(swap1.confirmButton.isEnabled());
+		assertFalse(swap1.pokemonButton[0].isEnabled());
+		assertTrue(swap1.pokemonButton[1].isEnabled());
+		assertFalse(swap1.pokemonButton[2].isEnabled());
+	}
 }
+
+
+
 
 
 class TestFrame

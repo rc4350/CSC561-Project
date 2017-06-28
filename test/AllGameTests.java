@@ -3,7 +3,7 @@ import org.junit.runners.Suite;
 
 import Attack.TestAttack;
 import Attack.TestAttackFactory;
-import Command.TestSwapPanelConfirmCMD;
+import Command.TestSwapPanelConfirmCMDPlayer1;
 import Pokemon.TestPokemon;
 import Pokemon.TestPokemonFactory;
 import Type.TestFireType;
@@ -33,7 +33,7 @@ import player.TestPlayer;
 	TestPkmnType.class,
 	TestWaterType.class,
 	TestSwapPanel.class,
-	TestSwapPanelConfirmCMD.class
+	TestSwapPanelConfirmCMDPlayer1.class
 })
 
 public class AllGameTests {

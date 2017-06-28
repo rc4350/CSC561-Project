@@ -71,6 +71,7 @@ public class TestGameWorld
 		test.setActionPlayer1Attack(attk);
 		assertEquals(1, test.getPlayer1Action());
 		assertEquals(attk, test.getPlayer1Attack());
+		assertTrue(test.getPlayer1ReadyStatus());
 	}
 	@Test
 	public void testActionSetAttackP2()
@@ -81,6 +82,7 @@ public class TestGameWorld
 		test.setActionPlayer2Attack(attk);
 		assertEquals(1, test.getPlayer2Action());
 		assertEquals(attk, test.getPlayer2Attack());
+		assertTrue(test.getPlayer2ReadyStatus());
 	}
 	
 	@Test
@@ -92,6 +94,7 @@ public class TestGameWorld
 		test.setActionPlayer1Swap(poke);
 		assertEquals(2,  test.getPlayer1Action());
 		assertEquals(poke, test.getPlayer1Pokemon());
+		assertTrue(test.getPlayer1ReadyStatus());
 	}
 	@Test
 	public void testActionSetPlayer2Swap()
@@ -102,5 +105,6 @@ public class TestGameWorld
 		test.setActionPlayer2Swap(poke);
 		assertEquals(2,  test.getPlayer2Action());
 		assertEquals(poke, test.getPlayer2Pokemon());
+		assertTrue(test.getPlayer2ReadyStatus());
 	}
 }
