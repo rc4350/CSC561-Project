@@ -37,6 +37,9 @@ public class TestPokemonFactory
 		assertEquals("Bulbasaur", br.getName());
 		assertTrue(br.getType() instanceof GrassType);
 		assertNotNull(br.getImageIcon());
+		assertEquals("GrassMedium", br.getAttack(0).getName());
+		assertEquals("GrassWeak", br.getAttack(1).getName());
+		assertEquals("FireStrong", br.getAttack(2).getName());
 	}
 	
 	@Test
@@ -50,6 +53,9 @@ public class TestPokemonFactory
 		assertEquals("Ivysaur", br.getName());
 		assertTrue(br.getType() instanceof GrassType);
 		assertNotNull(br.getImageIcon());
+		assertEquals("GrassStrong", br.getAttack(0).getName());
+		assertEquals("GrassWeak", br.getAttack(1).getName());
+		assertEquals("FireWeak", br.getAttack(2).getName());
 	}
 	@Test
 	public void testVenusaur() throws IOException
@@ -62,6 +68,10 @@ public class TestPokemonFactory
 		assertEquals("Venusaur", br.getName());
 		assertTrue(br.getType() instanceof GrassType);
 		assertNotNull(br.getImageIcon());
+		assertEquals("GrassStrong", br.getAttack(0).getName());
+		assertEquals("GrassMedium", br.getAttack(1).getName());
+		assertEquals("GrassWeak", br.getAttack(2).getName());
+		assertEquals("FireMedium", br.getAttack(3).getName());
 	}
 	@Test
 	public void testCaterpie() throws IOException
@@ -74,6 +84,10 @@ public class TestPokemonFactory
 		assertEquals("Caterpie", br.getName());
 		assertTrue(br.getType() instanceof GrassType);
 		assertNotNull(br.getImageIcon());
+		assertEquals("GrassStrong", br.getAttack(0).getName());
+		assertEquals("GrassWeak", br.getAttack(1).getName());
+		assertEquals("FireWeak", br.getAttack(2).getName());
+		assertEquals("WaterWeak", br.getAttack(3).getName());
 	}
 	
 	@Test
@@ -87,6 +101,9 @@ public class TestPokemonFactory
 		assertEquals("Charmander", br.getName());
 		assertTrue(br.getType() instanceof FireType);
 		assertNotNull(br.getImageIcon());
+		assertEquals("FireMedium", br.getAttack(0).getName());
+		assertEquals("FireWeak", br.getAttack(1).getName());
+		assertEquals("WaterStrong", br.getAttack(2).getName());
 	}
 	
 	@Test
@@ -100,6 +117,9 @@ public class TestPokemonFactory
 		assertEquals("Charmeleon", br.getName());
 		assertTrue(br.getType() instanceof FireType);
 		assertNotNull(br.getImageIcon());
+		assertEquals("FireStrong", br.getAttack(0).getName());
+		assertEquals("FireWeak", br.getAttack(1).getName());
+		assertEquals("WaterWeak", br.getAttack(2).getName());
 	}
 	
 	@Test
@@ -113,6 +133,10 @@ public class TestPokemonFactory
 		assertEquals("Charizard", br.getName());
 		assertTrue(br.getType() instanceof FireType);
 		assertNotNull(br.getImageIcon());
+		assertEquals("FireStrong", br.getAttack(0).getName());
+		assertEquals("FireMedium", br.getAttack(1).getName());
+		assertEquals("FireWeak", br.getAttack(2).getName());
+		assertEquals("WaterMedium", br.getAttack(3).getName());
 	}
 	@Test
 	public void testVulpix() throws IOException
@@ -125,6 +149,10 @@ public class TestPokemonFactory
 		assertEquals("Vulpix", br.getName());
 		assertTrue(br.getType() instanceof FireType);
 		assertNotNull(br.getImageIcon());
+		assertEquals("FireStrong", br.getAttack(0).getName());
+		assertEquals("FireWeak", br.getAttack(1).getName());
+		assertEquals("WaterWeak", br.getAttack(2).getName());
+		assertEquals("GrassWeak", br.getAttack(3).getName());
 	}
 	
 	@Test
@@ -138,6 +166,9 @@ public class TestPokemonFactory
 		assertEquals("Squirtle", br.getName());
 		assertTrue(br.getType() instanceof WaterType);
 		assertNotNull(br.getImageIcon());
+		assertEquals("WaterMedium", br.getAttack(0).getName());
+		assertEquals("WaterWeak", br.getAttack(1).getName());
+		assertEquals("GrassStrong", br.getAttack(2).getName());
 	}
 	@Test
 	public void testWartortle() throws IOException
@@ -150,6 +181,9 @@ public class TestPokemonFactory
 		assertEquals("Wartortle", br.getName());
 		assertTrue(br.getType() instanceof WaterType);
 		assertNotNull(br.getImageIcon());
+		assertEquals("WaterStrong", br.getAttack(0).getName());
+		assertEquals("WaterWeak", br.getAttack(1).getName());
+		assertEquals("GrassWeak", br.getAttack(2).getName());
 	}
 	
 	@Test
@@ -163,6 +197,10 @@ public class TestPokemonFactory
 		assertEquals("Blastoise", br.getName());
 		assertTrue(br.getType() instanceof WaterType);
 		assertNotNull(br.getImageIcon());
+		assertEquals("WaterStrong", br.getAttack(0).getName());
+		assertEquals("WaterMedium", br.getAttack(1).getName());
+		assertEquals("WaterWeak", br.getAttack(2).getName());
+		assertEquals("GrassMedium", br.getAttack(3).getName());
 	}
 	
 	@Test
@@ -176,6 +214,10 @@ public class TestPokemonFactory
 		assertEquals("Poliwag", br.getName());
 		assertTrue(br.getType() instanceof WaterType);
 		assertNotNull(br.getImageIcon());
+		assertEquals("WaterStrong", br.getAttack(0).getName());
+		assertEquals("WaterWeak", br.getAttack(1).getName());
+		assertEquals("GrassWeak", br.getAttack(2).getName());
+		assertEquals("FireWeak", br.getAttack(3).getName());
 	}
 	
 	@Test
