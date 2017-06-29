@@ -5,10 +5,12 @@ import java.awt.GridLayout;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import Attack.Attack;
 import Command.CommandInterface;
+import Pokemon.Pokemon;
 import player.Player;
 
 public class AttackPanel 
@@ -17,6 +19,8 @@ public class AttackPanel
 	private JPanel pokemonPanel;
 	private JPanel buttonsPanel;
 	private JPanel backPanel;
+	
+	public JLabel iconPoke;
 	
 	private Player player;
 	private Attack selected;
@@ -50,7 +54,8 @@ public class AttackPanel
 		/**
 		 * Pokemon panel
 		 */
-		pokemonIcon = player.getActive().getImageIcon();
+		//pokemonIcon = player.getActive().getImageIcon();
+		//icon.setIcon(pokemonIcon);
 		//.setIcon(pokemonIcon); 
 		
 		/**
@@ -72,6 +77,15 @@ public class AttackPanel
 		mainPanel.add("North", pokemonPanel);
 		mainPanel.add("Center",buttonsPanel);
 		mainPanel.add("South", backPanel);		
+	}
+	public AttackPanel(Player p1)
+	{
+		this();
+		player = p1;
+
+			//pokemonIcon = p1.getPokemon(0).getImageIcon();
+			//System.out.println(pokemonIcon);
+			//iconPoke.setIcon(pokemonIcon);	
 	}
 	
 	public JPanel getPanel()
