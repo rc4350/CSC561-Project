@@ -144,9 +144,7 @@ class TestFrameAttack
 
 class testattackFrame extends JFrame
 {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 
 	public testattackFrame(JPanel panel)
