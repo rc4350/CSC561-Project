@@ -17,7 +17,9 @@ public class AttackPanelBackCommandPlayer2 implements CommandInterface
 		battleFrame = frame;
 		attP = ap;
 	}
-
+	/**
+	 * override execute method and update player2 panel
+	 */
 	@Override
 	public void execute() 
 	{

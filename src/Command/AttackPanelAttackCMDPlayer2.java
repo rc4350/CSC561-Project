@@ -18,7 +18,9 @@ public class AttackPanelAttackCMDPlayer2 implements CommandInterface
 		attackPanel = watching;
 		attack = att;
 	}
-	
+	/**
+	 * override execute method and set action player2 attack 
+	 */
 	@Override
 	public void execute()
 	{
