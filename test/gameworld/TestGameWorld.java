@@ -19,7 +19,10 @@ import UI.AttackPanel;
 import UI.MainBattleScreen;
 import UI.SwapPanel;
 import player.Player;
-
+/**
+ * Test the GameWorld class
+ * @author Deema Alrashdan, Ryan Campbell
+ */
 public class TestGameWorld 
 {
 	
