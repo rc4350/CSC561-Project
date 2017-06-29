@@ -78,7 +78,7 @@ public class TestMainBattleScreen
 	}
 	
 	@Test
-	public void testUpdatePlayer1Panel()
+	public void testUpdatePlayer1Panel() throws InterruptedException
 	{
 		MainBattleScreen mb = new MainBattleScreen();
 		JPanel panelp2 = new JPanel(new BorderLayout());
@@ -105,17 +105,28 @@ public class TestMainBattleScreen
 		mb.testMethodPlayer1SetUp();
 		assertEquals(p1b, mb.currentPanelOne);
 		assertEquals(p1b, mb.battlePanelOne);
+		assertEquals(p1s, mb.swapPanelOne);
+		assertEquals(p1a, mb.attackPanelOne);
+		
 		assertEquals(JOptionPane.YES_OPTION, JOptionPane.showConfirmDialog(null, "does left panel display p1b?"));
 		
 		
 		
 		mb.updatePlayer1Panel(2);
 		assertEquals(p1s, mb.currentPanelOne);
+		assertEquals(p1b, mb.battlePanelOne);
+		assertEquals(p1s, mb.swapPanelOne);
+		assertEquals(p1a, mb.attackPanelOne);
+		
 		assertEquals(JOptionPane.YES_OPTION, JOptionPane.showConfirmDialog(null, "does left panel display p1s?"));
 		
 		
 		mb.updatePlayer1Panel(3);
 		assertEquals(p1a, mb.currentPanelOne);
+		assertEquals(p1b, mb.battlePanelOne);
+		assertEquals(p1s, mb.swapPanelOne);
+		assertEquals(p1a, mb.attackPanelOne);
+	
 		assertEquals(JOptionPane.YES_OPTION, JOptionPane.showConfirmDialog(null, "does left panel display p1a?"));
 		
 		/*
@@ -128,20 +139,36 @@ public class TestMainBattleScreen
 		
 		mb.updatePlayer1Panel(2);
 		assertEquals(p1s, mb.currentPanelOne);
+		assertEquals(p1b, mb.battlePanelOne);
+		assertEquals(p1s, mb.swapPanelOne);
+		assertEquals(p1a, mb.attackPanelOne);
+	
 		assertEquals(JOptionPane.YES_OPTION, JOptionPane.showConfirmDialog(null, "does left panel display p1s?"));
 		
 		
 		mb.updatePlayer1Panel(1);
 		assertEquals(p1b, mb.currentPanelOne);
+		assertEquals(p1b, mb.battlePanelOne);
+		assertEquals(p1s, mb.swapPanelOne);
+		assertEquals(p1a, mb.attackPanelOne);
+		
 		assertEquals(JOptionPane.YES_OPTION, JOptionPane.showConfirmDialog(null, "does left panel display p1b?"));
 		
 		
 		mb.updatePlayer1Panel(3);
+		assertEquals(p1b, mb.battlePanelOne);
+		assertEquals(p1s, mb.swapPanelOne);
+		assertEquals(p1a, mb.attackPanelOne);
 		assertEquals(p1a, mb.currentPanelOne);
+		
 		assertEquals(JOptionPane.YES_OPTION, JOptionPane.showConfirmDialog(null, "does left panel display p1a?"));
 		
 		mb.updatePlayer1Panel(1);
+		assertEquals(p1b, mb.battlePanelOne);
+		assertEquals(p1s, mb.swapPanelOne);
+		assertEquals(p1a, mb.attackPanelOne);
 		assertEquals(p1b, mb.currentPanelOne);
+		
 		assertEquals(JOptionPane.YES_OPTION, JOptionPane.showConfirmDialog(null, "does left panel display p1b?"));
 	}
 }

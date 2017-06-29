@@ -156,6 +156,7 @@ public class MainBattleScreen extends JFrame
 			this.add(currentPanelOne);
 			this.add(currentPanelTwo);
 			this.validate();
+			this.repaint();
 		}
 		else if(swapTo == 2)
 		{
@@ -165,6 +166,7 @@ public class MainBattleScreen extends JFrame
 			this.add(currentPanelOne);
 			this.add(currentPanelTwo);
 			this.validate();
+			this.repaint();
 		}
 		else if(swapTo == 3)
 		{
@@ -174,6 +176,7 @@ public class MainBattleScreen extends JFrame
 			this.add(currentPanelOne);
 			this.add(currentPanelTwo);
 			this.validate();
+			this.repaint();
 		}
 		
 	}
