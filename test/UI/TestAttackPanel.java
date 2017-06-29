@@ -15,7 +15,8 @@ import Pokemon.PokemonFactory;
 import gameworld.GameWorld;
 import player.Player;
 
-public class TestAttackPanel {
+public class TestAttackPanel 
+{
 
 	@Test
 	public void testConstructor()
@@ -121,5 +122,4 @@ class TestFrameAttack
 		main.add(attPan1);
 		main.add(attPan2);
 	}
-
 }

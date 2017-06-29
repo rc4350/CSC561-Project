@@ -2,6 +2,8 @@ package UI;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -10,10 +12,9 @@ import javax.swing.JPanel;
 
 import Attack.Attack;
 import Command.CommandInterface;
-import Pokemon.Pokemon;
 import player.Player;
 
-public class AttackPanel 
+public class AttackPanel implements ActionListener
 {
 	private JPanel mainPanel;
 	private JPanel pokemonPanel;
@@ -49,7 +50,14 @@ public class AttackPanel
 		attackButton2 = new JButton("A2");
 		attackButton3 = new JButton("A3");
 		attackButton4 = new JButton ("A4");
+		
+		attackButton1.addActionListener(this);
+		attackButton2.addActionListener(this);
+		attackButton3.addActionListener(this);
+		attackButton4.addActionListener(this);	
+		
 		backButton = new JButton("BACK");
+
 		
 		/**
 		 * Pokemon panel
@@ -78,6 +86,11 @@ public class AttackPanel
 		mainPanel.add("Center",buttonsPanel);
 		mainPanel.add("South", backPanel);		
 	}
+	
+	/**
+	 * Constructor two
+	 * @param p1
+	 */
 	public AttackPanel(Player p1)
 	{
 		this();
@@ -88,16 +101,58 @@ public class AttackPanel
 			//iconPoke.setIcon(pokemonIcon);	
 	}
 	
+	/**
+	 * get panel
+	 * @return
+	 */
 	public JPanel getPanel()
 	{
 		return mainPanel;
 	}
+	
+	/**
+	 * get attack
+	 * @return
+	 */
 	public Attack getSelected()
 	{
 		return selected;
 	}
+	
+	/**
+	 * Set attack
+	 * @param selected
+	 */
 	public void setSelected(Attack selected)
 	{
 		this.selected = selected;
+	}
+	
+	/**
+	 * action listener for buttons
+	 */
+	@Override
+	public void actionPerformed(ActionEvent event) 
+	{
+		if (event.getSource() == attackButton1)
+		{
+			BtnAttack1Command.execute();
+		}
+		else if (event.getSource() == attackButton2)
+		{
+			BtnAttack2Command.execute();
+		}
+		else if (event.getSource() == attackButton3)
+		{
+			BtnAttack3Command.execute();
+		}
+		else if (event.getSource() == attackButton4)
+		{
+			BtnAttack4Command.execute();
+		}
+		else if (event.getSource() == backButton)
+		{
+			backButtonCommand.execute();
+		}		
 	}
 }
