@@ -2,7 +2,10 @@ package Command;
 
 import UI.MainBattleScreen;
 import UI.SwapPanel;
-
+/**
+* SwapPanel back command for player1
+*@author DeemacAlrashdan, Ryan Campbell
+*/
 public class SwapPanelBackCMDPlayer1 implements CommandInterface
 {
 	private MainBattleScreen battleFrame;

@@ -2,7 +2,11 @@ package Command;
 
 import UI.SwapPanel;
 import gameworld.GameWorld;
-
+/**
+ * SwapPanel 2 command builder
+ * @author Deema Alrashdan, Ryan Campbell
+ *
+ */
 public class SwapPanel2CommandBuilder
 {
 

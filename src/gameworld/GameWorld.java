@@ -10,7 +10,10 @@ import Attack.Attack;
 import player.Player;
 import Pokemon.Pokemon;
 import UI.MainBattleScreen;
-
+/**
+* GameWorld class ( the environment )
+*@author DeemacAlrashdan, Ryan Campbell
+*/
 public class GameWorld 
 {
 	private static GameWorld gameWorld;

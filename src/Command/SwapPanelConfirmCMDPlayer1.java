@@ -2,7 +2,10 @@ package Command;
 
 import UI.SwapPanel;
 import gameworld.GameWorld;
-
+/**
+* SwapPanel confirm command for player1
+*@author DeemacAlrashdan, Ryan Campbell
+*/
 public class SwapPanelConfirmCMDPlayer1 implements CommandInterface
 {
 	private SwapPanel swapPanel;

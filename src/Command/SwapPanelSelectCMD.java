@@ -2,7 +2,10 @@ package Command;
 
 import Pokemon.Pokemon;
 import UI.SwapPanel;
-
+/**
+* SwapPanel select command
+*@author DeemacAlrashdan, Ryan Campbell
+*/
 public class SwapPanelSelectCMD implements CommandInterface
 {
 
