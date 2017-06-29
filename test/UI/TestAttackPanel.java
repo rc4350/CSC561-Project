@@ -19,9 +19,12 @@ public class TestAttackPanel
 {
 
 	@Test
-	public void testConstructor()
+	public void testConstructor() throws IOException
 	{
-		AttackPanel ap = new AttackPanel();
+		Player p1 = new Player();
+		PokemonFactory pf = new PokemonFactory();
+		p1.changeActive(pf.getBlastoise());
+		AttackPanel ap = new AttackPanel(p1);
 		assertNotNull(ap);
 		assertTrue(ap.getPanel() instanceof JPanel);
 	}
@@ -72,9 +75,12 @@ public class TestAttackPanel
 	}
 	
 	@Test
-	public void testSetSelected()
+	public void testSetSelected() throws IOException
 	{
 		Player p1 = new Player(); 
+		PokemonFactory pf = new PokemonFactory();
+		p1.addPokemon(pf.getBlastoise());
+		p1.changeActive(p1.getPokemon(0));
 		AttackPanel attP = new AttackPanel(p1);
 		GameWorld.getInstance().addPlayer1(p1);
 		
@@ -84,7 +90,8 @@ public class TestAttackPanel
 		
 		//set attack in the attack panel
 		attP.setSelected(attF.getFireMedium());
-		
+		testattackFrame test = new testattackFrame(attP.getPanel());
+		assertEquals(JOptionPane.YES_OPTION, JOptionPane.showConfirmDialog(null, "idoes pane look right?"));
 		assertEquals(GameWorld.getInstance().getPlayer1Attack(),attP.getSelected());	
 	}
 }
@@ -121,5 +128,21 @@ class TestFrameAttack
 	{
 		main.add(attPan1);
 		main.add(attPan2);
+	}
+}
+
+class testattackFrame extends JFrame
+{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public testattackFrame(JPanel panel)
+	{
+		this.setLayout(new GridLayout(1,1));
+		this.add(panel);
+		this.pack();
+		this.setVisible(true);
 	}
 }

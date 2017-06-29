@@ -39,13 +39,14 @@ public class AttackPanel implements ActionListener
 	/**
 	 * Constructor
 	 */
-	public AttackPanel()
+	public AttackPanel(Player p1)
 	{
+		player = p1;
 		mainPanel = new JPanel( new BorderLayout());
 		pokemonPanel = new JPanel (new GridLayout(1,1));
 		buttonsPanel = new JPanel ( new GridLayout(2,2));
 		backPanel = new JPanel (new GridLayout (1,1));
-		pokemonIcon = new ImageIcon();
+		//pokemonIcon = new ImageIcon();
 		attackButton1 = new JButton("A1");
 		attackButton2 = new JButton("A2");
 		attackButton3 = new JButton("A3");
@@ -62,9 +63,8 @@ public class AttackPanel implements ActionListener
 		/**
 		 * Pokemon panel
 		 */
-		//pokemonIcon = player.getActive().getImageIcon();
-		//icon.setIcon(pokemonIcon);
-		//.setIcon(pokemonIcon); 
+		iconPoke = new JLabel(player.getActive().getImageIcon());
+		pokemonPanel.add(iconPoke);
 		
 		/**
 		 * buttons Panel
@@ -91,7 +91,7 @@ public class AttackPanel implements ActionListener
 	 * Constructor two
 	 * @param p1
 	 */
-	public AttackPanel(Player p1)
+	/*public AttackPanel(Player p1)
 	{
 		this();
 		player = p1;
@@ -99,7 +99,7 @@ public class AttackPanel implements ActionListener
 			//pokemonIcon = p1.getPokemon(0).getImageIcon();
 			//System.out.println(pokemonIcon);
 			//iconPoke.setIcon(pokemonIcon);	
-	}
+	}*/
 	
 	/**
 	 * get panel
