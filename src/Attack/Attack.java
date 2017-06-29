@@ -1,5 +1,8 @@
 package Attack;
-
+/**
+* attack for a pokemon
+*@author DeemacAlrashdan, Ryan Campbell
+*/
 import Type.PkmnType;
 
 public class Attack
@@ -8,7 +11,9 @@ public class Attack
 	private int speed;
 	private char type;
 	private String name;
-	
+	/**
+	 * constructs and attack with defaults
+	 */
 	public Attack()
 	{
 		//defaults
@@ -16,7 +21,13 @@ public class Attack
 		speed = 1;
 		type = PkmnType.FIRE;
 	}
-	
+	/**
+	 * constructs an attack with given paraments
+	 * @param n name
+	 * @param tp type
+	 * @param dmg damage
+	 * @param spd speed
+	 */
 	public Attack(String n, char tp, int dmg, int spd)
 	{
 		//defaults

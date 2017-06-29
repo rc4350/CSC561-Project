@@ -10,6 +10,10 @@ import gameworld.GameWorld;
 public class SwapPanel2CommandBuilder
 {
 
+	/**
+	 * assigns commands to buttons
+	 * @param sp SwapPanel
+	 */
 	public SwapPanel2CommandBuilder(SwapPanel sp)
 	{
 		sp.pokemonButton1Command = new SwapPanelSelectCMD(sp, sp.getPlayer().getPokemon(0));

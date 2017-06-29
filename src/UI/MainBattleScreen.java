@@ -7,7 +7,10 @@ import java.awt.GridLayout;
  */
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-
+/**
+*  Frame holding panels for player 1 and player 2
+*@author DeemacAlrashdan, Ryan Campbell
+*/
 public class MainBattleScreen extends JFrame
 {
 	/**
@@ -21,12 +24,12 @@ public class MainBattleScreen extends JFrame
 	
 	/**
 	 * constructor receives the 6 player panels and sets the battle panels as the current panels
-	 * @param p1bp
-	 * @param p2bp
-	 * @param p1sp
-	 * @param p2sp
-	 * @param p1ap
-	 * @param p2ap
+	 * @param p1bp player 1 battle panel
+	 * @param p2bp player 2 battle panel
+	 * @param p1sp player 1 swap panel
+	 * @param p2sp player 2 swap panel
+	 * @param p1ap player 1 attack panel
+	 * @param p2ap player 2 attack panel
 	 * JPanel p1bp, JPanel p2bp, JPanel p1sp, JPanel p2sp, JPanel p1ap, JPanel p2ap
 	 */
 	public MainBattleScreen()

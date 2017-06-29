@@ -346,7 +346,7 @@ public class GameWorld
 		checkp2Ready = false;
 	}
 	/**
-	 * handles attack logic
+	 * handles attack logic if player 1 attacks first
 	 */
 	private void playerOneAttackFirst()
 	{
@@ -368,6 +368,9 @@ public class GameWorld
 			knockoutSwapPlayer2();
 		}
 	}
+	/**
+	 * handles attack logic if player 1 attacks first
+	 */
 	private void playerTwoAttackFirst()
 	{
 		player1.getActive().takeHit(p2Attack);

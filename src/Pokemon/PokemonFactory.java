@@ -16,7 +16,10 @@ import Type.FireType;
 import Type.GrassType;
 import Type.WaterType;
 
-//TODO add attacks and imageIcons for pokemon
+/**
+* creates pokemon instances
+*@author DeemacAlrashdan, Ryan Campbell
+*/
 
 public class PokemonFactory
 {
@@ -24,6 +27,9 @@ public class PokemonFactory
 	private Attack water[];
 	private Attack grass[];
 	
+	/**
+	 * construct pokemon factory, get attacks from attack factory
+	 */
 	public PokemonFactory()
 	{
 		AttackFactory af = new AttackFactory();
@@ -46,6 +52,10 @@ public class PokemonFactory
 	/*
 	 * grass types
 	 */
+	/**
+	 * create a new Pokemon called Bulbasaur
+	 * @return pokemon
+	 */
 	public Pokemon getBulbasaur() throws IOException
 	{
 		Pokemon poke = new Pokemon("Bulbasaur", 170, new GrassType());
@@ -55,7 +65,10 @@ public class PokemonFactory
 		poke.addAttack(fire[0]); //add strong fire attack
 		return poke;
 	}
-
+	/**
+	 * create a new Pokemon called IvySaur
+	 * @return pokemon
+	 */
 	public Pokemon getIvySaur() throws IOException
 	{
 		Pokemon poke = new Pokemon("Ivysaur", 230, new GrassType());
@@ -66,6 +79,10 @@ public class PokemonFactory
 		return poke;
 	}
 
+	/**
+	 * create a new Pokemon called Venusaur
+	 * @return pokemon
+	 */
 	public Pokemon getVenuSaur() throws IOException
 	{
 		Pokemon poke =  new Pokemon("Venusaur", 320, new GrassType());
@@ -76,7 +93,10 @@ public class PokemonFactory
 		poke.addAttack(fire[1]); //add medium fire attack
 		return poke;
 	}
-
+	/**
+	 * create a new Pokemon called Caterpie
+	 * @return pokemon
+	 */
 	public Pokemon getCaterpie() throws IOException
 	{
 		Pokemon poke = new Pokemon("Caterpie", 160, new GrassType());
@@ -90,6 +110,10 @@ public class PokemonFactory
 	/*
 	 * fire types
 	 */
+	/**
+	 * create a new Pokemon called Charmander
+	 * @return pokemon
+	 */
 	public Pokemon getCharmander() throws IOException
 	{
 		Pokemon poke = new Pokemon("Charmander", 170, new FireType());
@@ -99,7 +123,10 @@ public class PokemonFactory
 		poke.addAttack(water[0]); //add strong water attack
 		return poke;
 	}
-
+	/**
+	 * create a new Pokemon called Charmeleon
+	 * @return pokemon
+	 */
 	public Pokemon getCharmeleon() throws IOException
 	{
 		Pokemon poke =  new Pokemon("Charmeleon", 230, new FireType());
@@ -109,7 +136,11 @@ public class PokemonFactory
 		poke.addAttack(water[2]); //add weak water attack
 		return poke;
 	}
-
+	
+	/**
+	 * create a new Pokemon called Charizard
+	 * @return pokemon
+	 */
 	public Pokemon getCharizard() throws IOException
 	{
 		Pokemon poke =  new Pokemon("Charizard", 320, new FireType());
@@ -120,7 +151,10 @@ public class PokemonFactory
 		poke.addAttack(water[1]); //add medium water attack
 		return poke;
 	}
-
+	/**
+	 * create a new Pokemon called Vulpix
+	 * @return pokemon
+	 */
 	public Pokemon getVulpix() throws IOException
 	{
 		Pokemon poke =  new Pokemon("Vulpix", 160, new FireType());
@@ -135,6 +169,10 @@ public class PokemonFactory
 	 * water types
 	 */
 
+	/**
+	 * create a new Pokemon called Squirtle
+	 * @return pokemon
+	 */
 	public Pokemon getSquirtle() throws IOException
 	{
 		Pokemon poke =  new Pokemon("Squirtle", 170, new WaterType());
@@ -144,7 +182,10 @@ public class PokemonFactory
 		poke.addAttack(grass[0]); //add strong grass attack
 		return poke;
 	}
-
+	/**
+	 * create a new Pokemon called Wartortle
+	 * @return pokemon
+	 */
 	public Pokemon getWartortle() throws IOException
 	{
 		Pokemon poke =  new Pokemon("Wartortle", 230, new WaterType());
@@ -154,7 +195,10 @@ public class PokemonFactory
 		poke.addAttack(grass[2]); //add weak grass attack
 		return poke;
 	}
-
+	/**
+	 * create a new Pokemon called Blastoise
+	 * @return pokemon
+	 */
 	public Pokemon getBlastoise() throws IOException
 	{
 		Pokemon poke = new Pokemon("Blastoise", 320, new WaterType());
@@ -165,7 +209,10 @@ public class PokemonFactory
 		poke.addAttack(grass[1]); //add medium grass attack
 		return poke;
 	}
-
+	/**
+	 * create a new Pokemon called Poliwag
+	 * @return pokemon
+	 */
 	public Pokemon getPoliwag() throws IOException
 	{
 		Pokemon poke =  new Pokemon("Poliwag", 160, new WaterType());

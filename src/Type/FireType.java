@@ -1,4 +1,8 @@
 package Type;
+/**
+* define behavior for fire type pokemon
+*@author DeemacAlrashdan, Ryan Campbell
+*/
 
 public class FireType implements TypeBehavior
 {

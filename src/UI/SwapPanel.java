@@ -1,5 +1,8 @@
 package UI;
-
+/**
+* makes panel for swapping pokemon
+*@author DeemacAlrashdan, Ryan Campbell
+*/
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -35,6 +38,9 @@ public class SwapPanel implements ActionListener
 	public CommandInterface backButtonCommand;
 	public CommandInterface confirmButtonCommand;
 	
+	/**
+	 * constructs SwapPanel, building the JPanel to be used
+	 */
 	public SwapPanel()
 	{
 		myPanel = new JPanel(new BorderLayout());
@@ -63,7 +69,10 @@ public class SwapPanel implements ActionListener
 		myPanel.add("South",southPanel);
 		
 	}
-	
+	/**
+	 * constructs swap panel using the pokemon information of a player
+	 * @param p1 player
+	 */
 	public SwapPanel(Player p1)
 	{
 		this();
@@ -87,7 +96,9 @@ public class SwapPanel implements ActionListener
 	{
 		return myPanel;
 	}
-	
+	/**
+	 * updates the HP label for all pokemon to show their current hp
+	 */
 	public void updateHPLabel()
 	{
 		for (int i = 0; i<3; i++)
@@ -95,7 +106,9 @@ public class SwapPanel implements ActionListener
 			pokemonHPLabel[i].setText("HP:"+player.getPokemon(i).getCurrentHP()+"/"+player.getPokemon(i).getMaxHP());
 		}
 	}
-
+	/**
+	 * creates the Pokemon sub panel
+	 */
 	private void buildPokemonPanel()
 	{
 		for(int i = 0; i<3; i++)
@@ -105,7 +118,9 @@ public class SwapPanel implements ActionListener
 			pokemonPanel.add(pokemonHPLabel[i]);
 		}
 	}
-	
+	/**
+	 * creates the confirm/back panel
+	 */
 	private void buildSouthPanel()
 	{
 		southPanel.add(confirmButton);
@@ -180,6 +195,9 @@ public class SwapPanel implements ActionListener
 		
 	}
 
+	/**
+	 * handles button clicks
+	 */
 	@Override
 	public void actionPerformed(ActionEvent event)
 	{

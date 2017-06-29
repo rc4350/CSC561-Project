@@ -1,5 +1,8 @@
 package Type;
-
+/**
+* define behavior for grass type pokemon
+*@author DeemacAlrashdan, Ryan Campbell
+*/
 public class GrassType implements TypeBehavior
 {
 
