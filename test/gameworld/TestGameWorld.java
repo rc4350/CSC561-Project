@@ -125,12 +125,16 @@ public class TestGameWorld
 		PokemonFactory pf = new PokemonFactory();
 		Player p1 = new Player();
 		Player p2 = new Player();
+		test.addPlayer1(p1);
+		test.addPlayer2(p2);
 		p1.addPokemon(pf.getBlastoise());
 		p1.addPokemon(pf.getBulbasaur());
 		p1.addPokemon(pf.getCaterpie());
 		p2.addPokemon(pf.getCharmander());
 		p2.addPokemon(pf.getVenuSaur());
 		p2.addPokemon(pf.getVulpix());
+		p1.changeActive(p1.getPokemon(0));
+		p2.changeActive(p2.getPokemon(0));
 		MainBattleScreen mbs = new MainBattleScreen();
 		SwapPanel spp1 = new SwapPanel(p1);
 		SwapPanel spp2 = new SwapPanel(p2);
@@ -141,13 +145,81 @@ public class TestGameWorld
 		bp2.add(new JLabel("bp2"));
 		bp2.add(new JLabel("bp1"));
 		mbs.initialize(bp1, bp2, spp1.getPanel(), spp2.getPanel(), atp1.getPanel(), atp2.getPanel());
+		test.setBattleScreen(mbs);
 		
+		//p2 attack faster
 		test.setActionPlayer1Attack(p1.getPokemon(0).getAttack(0));
 		test.setActionPlayer2Attack(p2.getPokemon(0).getAttack(0));
 		test.checkStartTurn();
 		assertEquals(10,p2.getPokemon(0).getCurrentHP());
-		assertEquals(300, p2.getPokemon(0).getCurrentHP());
+		assertEquals(290, p1.getPokemon(0).getCurrentHP());
 		assertFalse(test.getPlayer1ReadyStatus());
 		assertFalse(test.getPlayer2ReadyStatus());
-	}
+		
+		//p1 attack faster
+		p1.getPokemon(0).setCurrentHP(p1.getPokemon(0).getMaxHP());
+		assertEquals(320, p1.getPokemon(0).getCurrentHP());
+		p2.getPokemon(0).setCurrentHP(p2.getPokemon(0).getMaxHP());
+		assertEquals(170, p2.getPokemon(0).getCurrentHP());
+		test.setActionPlayer1Attack(p1.getPokemon(0).getAttack(2));
+		test.setActionPlayer2Attack(p2.getPokemon(0).getAttack(2));
+		test.checkStartTurn();
+		assertEquals(90,p2.getPokemon(0).getCurrentHP());
+		assertEquals(240, p1.getPokemon(0).getCurrentHP());
+		assertFalse(test.getPlayer1ReadyStatus());
+		assertFalse(test.getPlayer2ReadyStatus());
+		
+		//attacks same speed
+		p1.getPokemon(0).setCurrentHP(p1.getPokemon(0).getMaxHP());
+		assertEquals(320, p1.getPokemon(0).getCurrentHP());
+		p2.getPokemon(0).setCurrentHP(p2.getPokemon(0).getMaxHP());
+		assertEquals(170, p2.getPokemon(0).getCurrentHP());
+		test.setActionPlayer1Attack(p1.getPokemon(0).getAttack(1));
+		test.setActionPlayer2Attack(p2.getPokemon(0).getAttack(0));
+		test.checkStartTurn();
+		assertEquals(50,p2.getPokemon(0).getCurrentHP());
+		assertEquals(290, p1.getPokemon(0).getCurrentHP());
+		assertFalse(test.getPlayer1ReadyStatus());
+		assertFalse(test.getPlayer2ReadyStatus());
+		
+		//p1 swap, p2 attack
+		p1.getPokemon(0).setCurrentHP(p1.getPokemon(0).getMaxHP());
+		assertEquals(320, p1.getPokemon(0).getCurrentHP());
+		p2.getPokemon(0).setCurrentHP(p2.getPokemon(0).getMaxHP());
+		assertEquals(170, p2.getPokemon(0).getCurrentHP());
+		
+		test.setActionPlayer1Swap(p1.getPokemon(1));
+		test.setActionPlayer2Attack(p2.getPokemon(0).getAttack(2));
+		test.checkStartTurn();
+		assertEquals(p1.getPokemon(1), p1.getActive());
+		assertEquals(130, p1.getPokemon(1).getCurrentHP());
+		assertFalse(test.getPlayer1ReadyStatus());
+		assertFalse(test.getPlayer2ReadyStatus());
+		
+		//p1 attack, p2 swap
+		p1.getPokemon(1).setCurrentHP(p1.getPokemon(1).getMaxHP());
+		assertEquals(170, p1.getPokemon(1).getCurrentHP());
+		p1.changeActive(p1.getPokemon(0));
+		p2.getPokemon(0).setCurrentHP(p2.getPokemon(0).getMaxHP());
+		assertEquals(170, p2.getPokemon(0).getCurrentHP());
+		
+		test.setActionPlayer1Attack(p1.getPokemon(0).getAttack(1));
+		test.setActionPlayer2Swap(p2.getPokemon(1));
+		test.checkStartTurn();
+		assertEquals(p2.getPokemon(1), p2.getActive());
+		assertEquals(290, p2.getPokemon(1).getCurrentHP());
+		assertFalse(test.getPlayer1ReadyStatus());
+		assertFalse(test.getPlayer2ReadyStatus());
+		//p1 and p2 swap
+		p1.changeActive(p1.getPokemon(0));
+		p2.changeActive(p2.getPokemon(0));
+		
+		test.setActionPlayer1Swap(p1.getPokemon(1));
+		test.setActionPlayer2Swap(p2.getPokemon(1));
+		test.checkStartTurn();
+		assertEquals(p2.getPokemon(1), p2.getActive());
+		assertEquals(p1.getPokemon(1), p1.getActive());
+		assertFalse(test.getPlayer1ReadyStatus());
+		assertFalse(test.getPlayer2ReadyStatus());
+	}	
 }

@@ -229,4 +229,11 @@ public class MainBattleScreen extends JFrame
 		this.setVisible(true);
 		
 	}
+	/**
+	 * redraw screen
+	 */
+	public void redraw()
+	{
+		this.repaint();
+	}
 }

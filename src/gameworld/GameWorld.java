@@ -308,19 +308,18 @@ public class GameWorld
 		else if( player1Action ==1 && player2Action == 2)
 		{
 			player2.changeActive(p2Pokemon);
-			p2Pokemon.takeHit(p1Attack);
+			player2.getActive().takeHit(p1Attack);
 		}
-		else if( player1Action ==2 && player2Action == 1);
+		else if( player1Action ==2 && player2Action == 1)
 		{
 			player1.changeActive(p1Pokemon);
-			p1Pokemon.takeHit(p2Attack);
+			player1.getActive().takeHit(p2Attack);
 		}
 		else if (player1Action ==2 && player2Action == 2)
 		{
 			player1.changeActive(p1Pokemon);
 			player2.changeActive(p2Pokemon);
-			battleScreen.updatePlayer1Panel(1);
-			battleScreen.updatePlayer2Panel(1);
+			battleScreen.redraw();
 		}
 		
 	}
@@ -342,11 +341,11 @@ public class GameWorld
 	 */
 	private void playerOneAttackFirst()
 	{
-		p2Pokemon.takeHit(p1Attack);
-		if(p2Pokemon.getCurrentHP() > 0)
+		player2.getActive().takeHit(p1Attack);
+		if(player2.getActive().getCurrentHP() > 0)
 		{
-			p1Pokemon.takeHit(p2Attack);
-			if(p1Pokemon.getCurrentHP() == 0)
+			player1.getActive().takeHit(p2Attack);
+			if(player1.getActive().getCurrentHP() == 0)
 			{
 				battleScreen.updatePlayer1Panel(2);
 				knockoutSwapPlayer1();
@@ -360,11 +359,11 @@ public class GameWorld
 	}
 	private void playerTwoAttackFirst()
 	{
-		p1Pokemon.takeHit(p2Attack);
-		if(p1Pokemon.getCurrentHP() > 0)
+		player1.getActive().takeHit(p2Attack);
+		if(player1.getActive().getCurrentHP() > 0)
 		{
-			p2Pokemon.takeHit(p1Attack);
-			if(p2Pokemon.getCurrentHP() == 0)
+			player2.getActive().takeHit(p1Attack);
+			if(player2.getActive().getCurrentHP() == 0)
 			{
 				battleScreen.updatePlayer2Panel(2);
 				knockoutSwapPlayer2();
