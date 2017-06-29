@@ -27,8 +27,8 @@ public class GameWorld
 	
 	private Attack p1Attack;
 	private Attack p2Attack;
-	private Pokemon p1Pokemon;
-	private Pokemon p2Pokemon;
+	protected Pokemon p1Pokemon;
+	protected Pokemon p2Pokemon;
 	private MainBattleScreen battleScreen;
 	
 	private int speedTie;
@@ -335,12 +335,15 @@ public class GameWorld
 	/**
 	 * call method when pokemon need swapped for a knockout
 	 */
-	private void knockoutSwapPlayer1()
+	protected void knockoutSwapPlayer1()
 	{
 		player1.changeActive(p1Pokemon);
 		checkp1Ready = false;
 	}
-	private void knockoutSwapPlayer2()
+	/**
+	 * call method when pokemon need swapped for a knockout
+	 */
+	protected void knockoutSwapPlayer2()
 	{
 		player2.changeActive(p2Pokemon);
 		checkp2Ready = false;

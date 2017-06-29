@@ -271,4 +271,32 @@ public class TestGameWorld
 		test.checkWin();
 		assertEquals(JOptionPane.YES_OPTION, JOptionPane.showConfirmDialog(null, "new frame says player 2 win?"));
 	}
+	@Test 
+	public void testKnockOutSwap() throws IOException
+	{
+		GameWorld test = GameWorld.getInstance();
+		PokemonFactory pf = new PokemonFactory();
+		Player p1 = new Player();
+		Player p2 = new Player();
+		test.addPlayer1(p1);
+		test.addPlayer2(p2);
+		p1.addPokemon(pf.getBlastoise());
+		p1.addPokemon(pf.getBulbasaur());
+		p1.addPokemon(pf.getCaterpie());
+		p2.addPokemon(pf.getCharmander());
+		p2.addPokemon(pf.getVenuSaur());
+		p2.addPokemon(pf.getVulpix());
+		
+		p1.changeActive(p1.getPokemon(0));
+		p2.changeActive(p2.getPokemon(0));
+		
+		test.p1Pokemon = p1.getPokemon(1);
+		test.p2Pokemon = p2.getPokemon(1);
+		
+		test.knockoutSwapPlayer1();
+		test.knockoutSwapPlayer2();
+		
+		assertEquals(p1.getPokemon(1), p1.getActive());
+		assertEquals(p2.getPokemon(1), p2.getActive());
+	}
 }
