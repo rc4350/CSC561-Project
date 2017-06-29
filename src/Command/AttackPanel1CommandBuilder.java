@@ -6,7 +6,7 @@ import gameworld.GameWorld;
 
 /**
 * AttackPanel 1 CMD Builder
-*
+*@author DeemacAlrashdan, Ryan Campbell
 */
 public class AttackPanel1CommandBuilder 
 	{
