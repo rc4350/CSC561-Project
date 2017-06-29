@@ -9,7 +9,10 @@ import org.junit.Test;
 import Attack.Attack;
 import UI.AttackPanel;
 import gameworld.GameWorld;
-
+/**
+ *Test Attack Panel, attack command for player1
+ * @author Deema Alrashdan, Ryan Campbell
+ */
 public class TestAttcakPanelAttackCMDPlayer1 
 {
 	@Test

@@ -10,6 +10,10 @@ import Attack.Attack;
 import UI.AttackPanel;
 import gameworld.GameWorld;
 
+/**
+ *Test Attack Panel, attack command for player2
+ * @author Deema Alrashdan, Ryan Campbell
+ */
 public class TestAttackPanelAttackCMDPlayer2 {
 
 	@Test

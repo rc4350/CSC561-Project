@@ -10,11 +10,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import Pokemon.Pokemon;
+import player.Player;
 
 
 /**
- * Battle panel class
- *
+ * Battle panel class which contain active pokemon icon, HP for the active pokemon, and attack and swpe buttons
+ * @author Deema Alrashdan, Ryan Campbell
  */
 public class BattlePanel
 {
@@ -24,7 +25,7 @@ public class BattlePanel
 	private JPanel buttonsPanel;
 	
 	public JLabel iconPoke;
-	
+	private Player player;
 	private ImageIcon pokemonImage;
 	private Pokemon pokemon;
 	private JLabel hpInfo;
@@ -36,6 +37,7 @@ public class BattlePanel
 	 */
 	public BattlePanel()
 	{
+		
 		mainPanel = new JPanel( new BorderLayout());
 		pokemonPanel = new JPanel (new GridLayout(1,1));
 		statsPanel = new JPanel (new GridLayout(1,1));
@@ -49,9 +51,9 @@ public class BattlePanel
 		/**
 		 * Pokemon panel icon
 		 */
-		//pokemonImage = pokemon.getImageIcon();
-		//iconPoke.setIcon(pokemonImage);
-		//pokemonPanel.add(iconPoke);
+		iconPoke = new JLabel(player.getActive().getImageIcon());
+		pokemonPanel.add(iconPoke);
+		
 		/**
 		 * HPInfo
 		 */

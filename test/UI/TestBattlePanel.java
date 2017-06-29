@@ -14,10 +14,11 @@ import org.junit.Test;
 import Pokemon.PokemonFactory;
 import player.Player;
 
-/**
- * testBattle panel
- *
+ /**
+ * TestBattlePanel to test the Battle panel
+ * @author Deema Alrashdan, Ryan Campbell
  */
+
 public class TestBattlePanel {
 
 	@Test

@@ -1,8 +1,7 @@
 package Type;
 /**
  * used for default of pokemon during testing.
- * @author Ryan Campbell
- *
+ * @author Ryan Campbell, Deema Alrashdan
  */
 public class NoType implements TypeBehavior
 {
