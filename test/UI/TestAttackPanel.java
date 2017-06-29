@@ -15,7 +15,10 @@ import Attack.AttackFactory;
 import Pokemon.PokemonFactory;
 import gameworld.GameWorld;
 import player.Player;
-
+/**
+ * TestAttackPanel to test the attack panel
+ * @author Deema Alrashdan, Ryan Campbell
+ */
 public class TestAttackPanel 
 {
 

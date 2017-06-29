@@ -12,7 +12,9 @@ import player.Player;
 
 /**
  *Test Attack Panel2 Builder
+ * @author Deema Alrashdan, Ryan Campbell
  */
+
 public class TestAttackPanel2CommandBuilder {
 
 	@Test

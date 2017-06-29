@@ -12,8 +12,9 @@ import player.Player;
 
 /**
  *Test Attack Panel Builder
- *
+ * @author Deema Alrashdan, Ryan Campbell
  */
+
 public class TestAttackPanel1CommandBuilder 
 {
 
@@ -41,7 +42,4 @@ public class TestAttackPanel1CommandBuilder
 		assertNotNull(cb);
 		
 	}
-	
-
-
 }

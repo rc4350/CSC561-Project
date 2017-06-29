@@ -17,6 +17,10 @@ import UI.AttackPanel;
 import UI.MainBattleScreen;
 import player.Player;
 
+/**
+ *Test Attack Panel, back command for player2
+ * @author Deema Alrashdan, Ryan Campbell
+ */
 public class TestAttackPanelBackCMDPlayer2 
 {
 
