@@ -30,11 +30,11 @@ public class AttackPanel implements ActionListener
 	private JButton attackButton1, attackButton2, attackButton3, attackButton4;
 	public JButton backButton;
 	
-	private CommandInterface BtnAttack1Command;
-	private CommandInterface BtnAttack2Command;
-	private CommandInterface BtnAttack3Command;
-	private CommandInterface BtnAttack4Command;
-	private CommandInterface backButtonCommand;
+	public CommandInterface BtnAttack1Command;
+	public CommandInterface BtnAttack2Command;
+	public CommandInterface BtnAttack3Command;
+	public CommandInterface BtnAttack4Command;
+	public CommandInterface backButtonCommand;
 	
 	/**
 	 * Constructor
