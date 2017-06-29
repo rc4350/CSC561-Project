@@ -1,5 +1,8 @@
 package Type;
-
+/**
+* Grass Type class is one type of pokemon
+*@author DeemacAlrashdan, Ryan Campbell
+*/
 public class GrassType implements TypeBehavior
 {
 

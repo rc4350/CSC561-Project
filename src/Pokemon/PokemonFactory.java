@@ -15,7 +15,10 @@ import Attack.AttackFactory;
 import Type.FireType;
 import Type.GrassType;
 import Type.WaterType;
-
+/**
+* Pokemon Factory to make pokemons
+*@author DeemacAlrashdan, Ryan Campbell
+*/
 //TODO add attacks and imageIcons for pokemon
 
 public class PokemonFactory

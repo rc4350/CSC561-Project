@@ -3,7 +3,10 @@ package player;
 import java.util.ArrayList;
 
 import Pokemon.Pokemon;
-
+/**
+*Player class builds players information including pokemon team
+*@author DeemacAlrashdan, Ryan Campbell
+*/
 public class Player 
 {
 	private ArrayList<Pokemon> team;

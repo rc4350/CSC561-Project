@@ -1,5 +1,8 @@
 package Type;
-
+/**
+* Fire Type class is one type of pokemon
+*@author DeemacAlrashdan, Ryan Campbell
+*/
 public class FireType implements TypeBehavior
 {
 	private int returnDmg;

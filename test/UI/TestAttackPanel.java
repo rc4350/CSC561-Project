@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import Attack.AttackFactory;
@@ -73,8 +74,7 @@ public class TestAttackPanel
 		assertEquals(JOptionPane.YES_OPTION, JOptionPane.showConfirmDialog(null, "Does right Panel look correct?"));
 		
 	}
-	
-	@Test
+@Test
 	public void testSetSelected() throws IOException
 	{
 		Player p1 = new Player(); 
@@ -83,6 +83,14 @@ public class TestAttackPanel
 		p1.changeActive(p1.getPokemon(0));
 		AttackPanel attP = new AttackPanel(p1);
 		GameWorld.getInstance().addPlayer1(p1);
+		
+		Player p2 = new Player(); 
+		PokemonFactory pf2 = new PokemonFactory();
+		p1.addPokemon(pf.getBlastoise());
+		p1.changeActive(p2.getPokemon(0));
+		AttackPanel attP2 = new AttackPanel(p1);
+		GameWorld.getInstance().addPlayer1(p1);
+		
 		
 		AttackFactory attF = new AttackFactory();
 		//set attack in the environment

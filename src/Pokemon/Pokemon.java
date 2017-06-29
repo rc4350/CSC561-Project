@@ -7,7 +7,10 @@ import javax.swing.ImageIcon;
 import Attack.Attack;
 import Type.NoType;
 import Type.TypeBehavior;
-
+/**
+* Pokemon class has the pokemons informaton 
+*@author DeemacAlrashdan, Ryan Campbell
+*/
 public class Pokemon
 {
 	private String name;
