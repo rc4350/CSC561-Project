@@ -18,7 +18,7 @@ import UI.MainBattleScreen;
 import UI.SwapPanel;
 import player.Player;
 
-public class TestSwapPanelBackCMDPlayer1
+public class TestSwapPanelBackCMDPlayer2
 {
 
 	@Test
@@ -40,7 +40,7 @@ public class TestSwapPanelBackCMDPlayer1
 		SwapPanel swap1 = new SwapPanel(p1);
 		swap1.setSelected(p1.getPokemon(1));
 		
-		TestSPFrame frame = new TestSPFrame();
+		TestFrame frame = new TestFrame();
 	
 		
 		
@@ -64,7 +64,7 @@ public class TestSwapPanelBackCMDPlayer1
 	}
 
 }
-class TestSPFrame extends MainBattleScreen
+class TestFrame extends MainBattleScreen
 {
 
 	/**
@@ -74,7 +74,7 @@ class TestSPFrame extends MainBattleScreen
 	private JPanel battlePanel;
 	private JPanel swap1;
 	private JPanel swap2;
-	public TestSPFrame()
+	public TestFrame()
 	{
 		super();
 		this.setSize(640,  480);

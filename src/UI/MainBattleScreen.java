@@ -177,4 +177,13 @@ public class MainBattleScreen extends JFrame
 		}
 		
 	}
+	/**
+	 * updates frame to change player 2 panel
+	 * @param swapTo panel to swap to for player2. 1 for battle, 2 for swap, 3 for attack
+	 */
+	public void updatePlayer2Panel(int i)
+	{
+		// TODO Auto-generated method stub
+		
+	}
 }

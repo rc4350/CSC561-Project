@@ -2,6 +2,8 @@ package UI;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -12,7 +14,7 @@ import Command.CommandInterface;
 import Pokemon.Pokemon;
 import player.Player;
 
-public class SwapPanel
+public class SwapPanel implements ActionListener
 {
 	private JPanel myPanel;
 	private JPanel pokemonPanel;
@@ -27,11 +29,11 @@ public class SwapPanel
 	private JLabel pokemonHPLabel[];
 	public JButton backButton, confirmButton;
 	
-	private CommandInterface pokemonButton1Command;
-	private CommandInterface pokemonButton2Command;
-	private CommandInterface pokemonButton3Command;
-	private CommandInterface backButtonCommand;
-	private CommandInterface confirmButtonCommand;
+	public CommandInterface pokemonButton1Command;
+	public CommandInterface pokemonButton2Command;
+	public CommandInterface pokemonButton3Command;
+	public CommandInterface backButtonCommand;
+	public CommandInterface confirmButtonCommand;
 	
 	public SwapPanel()
 	{
@@ -47,11 +49,14 @@ public class SwapPanel
 		{
 			pokemonIcon[i] = new ImageIcon();
 			pokemonButton[i] = new JButton();
+			pokemonButton[i].addActionListener(this);
 			pokemonNameLabel[i] = new JLabel();
 			pokemonHPLabel[i] = new JLabel();
 		}
 		backButton = new JButton("BACK");
+		backButton.addActionListener(this);
 		confirmButton = new JButton("CONFIRM");
+		confirmButton.addActionListener(this);
 		buildPokemonPanel();
 		buildSouthPanel();
 		myPanel.add("Center",pokemonPanel);
@@ -172,6 +177,32 @@ public class SwapPanel
 			}
 		}
 		confirmButton.setEnabled(true);
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent event)
+	{
+		if (event.getSource() == pokemonButton[1])
+		{
+			pokemonButton1Command.execute();
+		}
+		else if (event.getSource() == pokemonButton[2])
+		{
+			pokemonButton2Command.execute();
+		}
+		else if (event.getSource() == pokemonButton[3])
+		{
+			pokemonButton3Command.execute();
+		}
+		else if (event.getSource() == backButton)
+		{
+			backButtonCommand.execute();
+		}
+		else if (event.getSource() == confirmButton)
+		{
+			confirmButtonCommand.execute();
+		}
 		
 	}
 	

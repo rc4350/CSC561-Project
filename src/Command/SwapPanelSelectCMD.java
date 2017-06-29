@@ -1,7 +1,5 @@
 package Command;
 
-import javax.swing.JFrame;
-
 import Pokemon.Pokemon;
 import UI.SwapPanel;
 

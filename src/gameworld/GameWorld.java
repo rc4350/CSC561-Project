@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import Attack.Attack;
 import player.Player;
 import Pokemon.Pokemon;
+import UI.MainBattleScreen;
 
 public class GameWorld 
 {
@@ -21,6 +22,7 @@ public class GameWorld
 	private Attack p2Attack;
 	private Pokemon p1Pokemon;
 	private Pokemon p2Pokemon;
+	private MainBattleScreen battleScreen;
 	
 	/**
 	 * Constructor
@@ -243,6 +245,19 @@ public class GameWorld
 		return checkp2Ready;
 	}
 	
-	
+	/**
+	 * sets main battleScreen
+	 */
+	public void setBattleScreen(MainBattleScreen mbs)
+	{
+		battleScreen = mbs;
+	}
+	/**
+	 * gets battleScreen
+	 */
+	public MainBattleScreen getBattleScreen()
+	{
+		return battleScreen;
+	}
 	
 }
