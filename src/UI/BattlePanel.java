@@ -14,8 +14,8 @@ import player.Player;
 
 
 /**
- * Battle panel class
- *
+ * Battle panel class which contain active pokemon icon, HP for the active pokemon, and attack and swpe buttons
+ * @author Deema Alrashdan, Ryan Campbell
  */
 public class BattlePanel
 {
