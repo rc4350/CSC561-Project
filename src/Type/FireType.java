@@ -1,5 +1,5 @@
 package Type;
-*@author DeemacAlrashdan, Ryan Campbell
+
 /**
 * define behavior for fire type pokemon
 *@author DeemacAlrashdan, Ryan Campbell
