@@ -27,7 +27,7 @@ public class TestSwapPanel2ComandBuilder
 		MainBattleScreen mbs = new MainBattleScreen();
 		world.setBattleScreen(mbs);
 		SwapPanel sp = new SwapPanel(p1);
-		SwapPanel1CommandBuilder cb = new SwapPanel1CommandBuilder(sp);
+		SwapPanel2CommandBuilder cb = new SwapPanel2CommandBuilder(sp);
 		assertNotNull(cb);
 		
 	}

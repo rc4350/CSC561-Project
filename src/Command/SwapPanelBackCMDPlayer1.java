@@ -10,13 +10,21 @@ public class SwapPanelBackCMDPlayer1 implements CommandInterface
 {
 	private MainBattleScreen battleFrame;
 	private SwapPanel swap;
-	//TODO update with BattleFrame class
+
+	/**
+	 * constructs with mainbattle screen and swappanel
+	 * @param mbs MainBattleScreen
+	 * @param sp SwapPanel
+	 */
 	public SwapPanelBackCMDPlayer1(MainBattleScreen mbs, SwapPanel sp)
 	{
 		battleFrame = mbs;
 		swap = sp;
 	}
 
+	/**
+	 * updates main battle screen and changes swappanel enables
+	 */
 	@Override
 	public void execute()
 	{

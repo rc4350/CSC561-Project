@@ -6,5 +6,8 @@ package Command;
  */
 public interface CommandInterface
 {
+	/**
+	 * method to execute, overriden in all implementations
+	 */
 	public void execute();
 }

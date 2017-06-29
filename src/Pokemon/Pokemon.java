@@ -1,5 +1,9 @@
 package Pokemon;
 
+/**
+* Pokemon object.
+*@author DeemacAlrashdan, Ryan Campbell
+*/
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
@@ -20,6 +24,11 @@ public class Pokemon
 	private ArrayList<Attack> attacks;
 	private ImageIcon myImage;
 	
+	/**
+	 * creates a pokemon with given name and hp
+	 * @param pokemonName name
+	 * @param hp hitpoints
+	 */
 	public Pokemon(String pokemonName, int hp)
 	{
 		name = pokemonName;
@@ -35,7 +44,12 @@ public class Pokemon
 		attacks = new ArrayList<Attack>();
 		myType = new NoType();
 	}
-
+	/**
+	 * creates a pokemon with given name and hp and TypeBehavior
+	 * @param pokemonName name
+	 * @param hp hitpoints
+	 * @tb TypeBehavrio
+	 */
 	public Pokemon(String pokemonName, int hp, TypeBehavior tb)
 	{
 		this(pokemonName, hp);

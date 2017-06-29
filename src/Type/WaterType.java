@@ -1,5 +1,11 @@
 package Type;
+/**
 
+* define behavior for water type pokemon
+
+*@author DeemacAlrashdan, Ryan Campbell
+
+*/
 public class WaterType implements TypeBehavior
 {
 
