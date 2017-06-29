@@ -13,7 +13,11 @@ import javax.swing.JPanel;
 import Attack.Attack;
 import Command.CommandInterface;
 import player.Player;
-
+/**
+ * AttackPanel class whcih contains active icon image, buttons for the attacks, and back button
+ * @author Deema Alrashdan
+ *
+ */
 public class AttackPanel implements ActionListener
 {
 	private JPanel mainPanel;
