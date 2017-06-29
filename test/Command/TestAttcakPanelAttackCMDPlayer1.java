@@ -25,7 +25,8 @@ public class TestAttcakPanelAttackCMDPlayer1
 	{ 
 		GameWorld.getInstance();
 		Attack attack = new Attack();
-		AttackPanel attP = new AttackPanel();
+		//TODO 
+		AttackPanel attP = new AttackPanel(null);
 		
 		attP.setSelected(attack);
 		AttackPanelAttackCMDPlayer1 attPaCMD = new AttackPanelAttackCMDPlayer1(attP, attack);
