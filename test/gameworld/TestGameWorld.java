@@ -2,11 +2,21 @@ package gameworld;
 
 import static org.junit.Assert.*;
 
+import java.awt.GridLayout;
+import java.io.IOException;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 import org.junit.Before;
 import org.junit.Test;
 
 import Attack.Attack;
 import Pokemon.Pokemon;
+import Pokemon.PokemonFactory;
+import UI.AttackPanel;
+import UI.MainBattleScreen;
+import UI.SwapPanel;
 import player.Player;
 
 public class TestGameWorld 
@@ -106,5 +116,38 @@ public class TestGameWorld
 		assertEquals(2,  test.getPlayer2Action());
 		assertEquals(poke, test.getPlayer2Pokemon());
 		assertTrue(test.getPlayer2ReadyStatus());
+	}
+	
+	@Test
+	public void testCommenceTurn() throws IOException
+	{
+		GameWorld test = GameWorld.getInstance();
+		PokemonFactory pf = new PokemonFactory();
+		Player p1 = new Player();
+		Player p2 = new Player();
+		p1.addPokemon(pf.getBlastoise());
+		p1.addPokemon(pf.getBulbasaur());
+		p1.addPokemon(pf.getCaterpie());
+		p2.addPokemon(pf.getCharmander());
+		p2.addPokemon(pf.getVenuSaur());
+		p2.addPokemon(pf.getVulpix());
+		MainBattleScreen mbs = new MainBattleScreen();
+		SwapPanel spp1 = new SwapPanel(p1);
+		SwapPanel spp2 = new SwapPanel(p2);
+		AttackPanel atp1 = new AttackPanel(p1);
+		AttackPanel atp2 = new AttackPanel(p2);
+		JPanel bp1 = new JPanel(new GridLayout(1,1));
+		JPanel bp2 = new JPanel(new GridLayout(1,1));
+		bp2.add(new JLabel("bp2"));
+		bp2.add(new JLabel("bp1"));
+		mbs.initialize(bp1, bp2, spp1.getPanel(), spp2.getPanel(), atp1.getPanel(), atp2.getPanel());
+		
+		test.setActionPlayer1Attack(p1.getPokemon(0).getAttack(0));
+		test.setActionPlayer2Attack(p2.getPokemon(0).getAttack(0));
+		test.checkStartTurn();
+		assertEquals(10,p2.getPokemon(0).getCurrentHP());
+		assertEquals(300, p2.getPokemon(0).getCurrentHP());
+		assertFalse(test.getPlayer1ReadyStatus());
+		assertFalse(test.getPlayer2ReadyStatus());
 	}
 }

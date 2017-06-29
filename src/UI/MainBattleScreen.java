@@ -184,9 +184,49 @@ public class MainBattleScreen extends JFrame
 	 * updates frame to change player 2 panel
 	 * @param swapTo panel to swap to for player2. 1 for battle, 2 for swap, 3 for attack
 	 */
-	public void updatePlayer2Panel(int i)
+	public void updatePlayer2Panel(int swapTo)
 	{
-		// TODO Auto-generated method stub
+		if(swapTo == 1)
+		{
+			this.remove(currentPanelOne);
+			this.remove(currentPanelTwo);
+			currentPanelTwo = battlePanelTwo;
+			this.add(currentPanelOne);
+			this.add(currentPanelTwo);
+			this.validate();
+			this.repaint();
+		}
+		else if(swapTo == 2)
+		{
+			this.remove(currentPanelOne);
+			this.remove(currentPanelTwo);
+			currentPanelTwo = swapPanelTwo;
+			this.add(currentPanelOne);
+			this.add(currentPanelTwo);
+			this.validate();
+			this.repaint();
+		}
+		else if(swapTo == 3)
+		{
+			this.remove(currentPanelOne);
+			this.remove(currentPanelTwo);
+			currentPanelTwo = attackPanelTwo;
+			this.add(currentPanelOne);
+			this.add(currentPanelTwo);
+			this.validate();
+			this.repaint();
+		}
+		
+	}
+	/**
+	 * test method to set up the frame for testing
+	 */
+	protected void testMethodPlayer2SetUp()
+	{
+		this.add(currentPanelOne);
+		this.add(currentPanelTwo);
+		this.validate();
+		this.setVisible(true);
 		
 	}
 }

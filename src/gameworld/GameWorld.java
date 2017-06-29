@@ -24,6 +24,8 @@ public class GameWorld
 	private Pokemon p2Pokemon;
 	private MainBattleScreen battleScreen;
 	
+	private int speedTie;
+	
 	/**
 	 * Constructor
 	 */
@@ -32,6 +34,7 @@ public class GameWorld
 		pokemon = new ArrayList<Pokemon>();
 		checkp1Ready = false;
 		checkp2Ready = false;
+		speedTie = (int)(Math.random()*2+1);
 	}
 	
 	/**
@@ -258,6 +261,120 @@ public class GameWorld
 	public MainBattleScreen getBattleScreen()
 	{
 		return battleScreen;
+	}
+	
+	/**
+	 * checks if both players are ready to execute the turn
+	 */
+	public void checkStartTurn()
+	{
+		if (checkp1Ready == true && checkp2Ready == true)
+		{
+			commenceTurn();
+		}
+	}
+	/**
+	 * executes the actions for a turn
+	 */
+	public void commenceTurn()
+	{
+		checkp1Ready = false;
+		checkp2Ready = false;
+		
+		if(player1Action == 1 && player2Action ==1)
+		{
+			if(p1Attack.getSpeed()>p2Attack.getSpeed())
+			{
+				playerOneAttackFirst();
+			}
+			else if (p1Attack.getSpeed() < p2Attack.getSpeed())
+			{
+				playerTwoAttackFirst();
+			}
+			else
+			{
+				if(speedTie == 1)
+				{
+					playerOneAttackFirst();
+					speedTie =2;
+				}
+				else
+				{
+					playerTwoAttackFirst();
+					speedTie = 1;
+				}
+			}
+		}//end (action 1 == 1, action 2 == 1)
+		else if( player1Action ==1 && player2Action == 2)
+		{
+			player2.changeActive(p2Pokemon);
+			p2Pokemon.takeHit(p1Attack);
+		}
+		else if( player1Action ==2 && player2Action == 1);
+		{
+			player1.changeActive(p1Pokemon);
+			p1Pokemon.takeHit(p2Attack);
+		}
+		else if (player1Action ==2 && player2Action == 2)
+		{
+			player1.changeActive(p1Pokemon);
+			player2.changeActive(p2Pokemon);
+			battleScreen.updatePlayer1Panel(1);
+			battleScreen.updatePlayer2Panel(1);
+		}
+		
+	}
+	/**
+	 * call method when pokemon need swapped for a knockout
+	 */
+	private void knockoutSwapPlayer1()
+	{
+		player1.changeActive(p1Pokemon);
+		checkp1Ready = false;
+	}
+	private void knockoutSwapPlayer2()
+	{
+		player2.changeActive(p2Pokemon);
+		checkp2Ready = false;
+	}
+	/**
+	 * handles attack logic
+	 */
+	private void playerOneAttackFirst()
+	{
+		p2Pokemon.takeHit(p1Attack);
+		if(p2Pokemon.getCurrentHP() > 0)
+		{
+			p1Pokemon.takeHit(p2Attack);
+			if(p1Pokemon.getCurrentHP() == 0)
+			{
+				battleScreen.updatePlayer1Panel(2);
+				knockoutSwapPlayer1();
+			}
+		}
+		else
+		{
+			battleScreen.updatePlayer2Panel(2);
+			knockoutSwapPlayer2();
+		}
+	}
+	private void playerTwoAttackFirst()
+	{
+		p1Pokemon.takeHit(p2Attack);
+		if(p1Pokemon.getCurrentHP() > 0)
+		{
+			p2Pokemon.takeHit(p1Attack);
+			if(p2Pokemon.getCurrentHP() == 0)
+			{
+				battleScreen.updatePlayer2Panel(2);
+				knockoutSwapPlayer2();
+			}
+		}
+		else
+		{
+			battleScreen.updatePlayer1Panel(2);
+			knockoutSwapPlayer1();
+		}
 	}
 	
 }

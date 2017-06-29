@@ -171,6 +171,95 @@ public class TestMainBattleScreen
 		
 		assertEquals(JOptionPane.YES_OPTION, JOptionPane.showConfirmDialog(null, "does left panel display p1b?"));
 	}
+	@Test
+	public void testUpdatePlayer2Panel() 
+	{
+		MainBattleScreen mb = new MainBattleScreen();
+		JPanel panelp1 = new JPanel(new BorderLayout());
+		JPanel p2b = new JPanel(new BorderLayout());
+		JPanel p2s = new JPanel(new BorderLayout());
+		JPanel p2a = new JPanel(new BorderLayout());
+		
+		panelp1.add("Center", new JLabel("player 1 panel"));
+		p2b.add("Center", new JLabel("p2b"));
+		p2s.add("Center", new JLabel("p2s"));
+		p2a.add("Center", new JLabel("p2a"));
+		
+		mb.setBattlePanelOne(panelp1);
+		mb.setBattlePanelTwo(p2b);
+		mb.setAttackPanelTwo(p2a);
+		mb.setSwapPanelTwo(p2s);
+		mb.setCurrentPanelTwo(p2b);
+		mb.setCurrentPanelOne(panelp1);
+		
+		assertEquals(p2b, mb.battlePanelTwo);
+		
+		
+		
+		mb.testMethodPlayer2SetUp();
+		assertEquals(p2b, mb.currentPanelTwo);
+		assertEquals(p2b, mb.battlePanelTwo);
+		assertEquals(p2s, mb.swapPanelTwo);
+		assertEquals(p2a, mb.attackPanelTwo);
+		
+		assertEquals(JOptionPane.YES_OPTION, JOptionPane.showConfirmDialog(null, "does right panel display p2b?"));
+		
+		
+		
+		mb.updatePlayer2Panel(2);
+		assertEquals(p2s, mb.currentPanelTwo);
+		assertEquals(p2b, mb.battlePanelTwo);
+		assertEquals(p2s, mb.swapPanelTwo);
+		assertEquals(p2a, mb.attackPanelTwo);
+		
+		assertEquals(JOptionPane.YES_OPTION, JOptionPane.showConfirmDialog(null, "does right panel display p2s?"));
+		
+		
+		mb.updatePlayer2Panel(3);
+		assertEquals(p2a, mb.currentPanelTwo);
+		assertEquals(p2b, mb.battlePanelTwo);
+		assertEquals(p2s, mb.swapPanelTwo);
+		assertEquals(p2a, mb.attackPanelTwo);
+	
+		assertEquals(JOptionPane.YES_OPTION, JOptionPane.showConfirmDialog(null, "does Right panel display p2a?"));
+		
+		
+		mb.updatePlayer2Panel(2);
+		assertEquals(p2s, mb.currentPanelTwo);
+		assertEquals(p2b, mb.battlePanelTwo);
+		assertEquals(p2s, mb.swapPanelTwo);
+		assertEquals(p2a, mb.attackPanelTwo);
+		
+		assertEquals(JOptionPane.YES_OPTION, JOptionPane.showConfirmDialog(null, "does right panel display p2s?"));
+		
+		
+		
+		mb.updatePlayer2Panel(1);
+		assertEquals(p2b, mb.currentPanelTwo);
+		assertEquals(p2b, mb.battlePanelTwo);
+		assertEquals(p2s, mb.swapPanelTwo);
+		assertEquals(p2a, mb.attackPanelTwo);
+		
+		assertEquals(JOptionPane.YES_OPTION, JOptionPane.showConfirmDialog(null, "does right panel display p2b?"));
+		
+		
+		mb.updatePlayer2Panel(3);
+		assertEquals(p2a, mb.currentPanelTwo);
+		assertEquals(p2b, mb.battlePanelTwo);
+		assertEquals(p2s, mb.swapPanelTwo);
+		assertEquals(p2a, mb.attackPanelTwo);
+	
+		assertEquals(JOptionPane.YES_OPTION, JOptionPane.showConfirmDialog(null, "does Right panel display p2a?"));
+		
+		mb.updatePlayer2Panel(1);
+		assertEquals(p2b, mb.currentPanelTwo);
+		assertEquals(p2b, mb.battlePanelTwo);
+		assertEquals(p2s, mb.swapPanelTwo);
+		assertEquals(p2a, mb.attackPanelTwo);
+		
+		assertEquals(JOptionPane.YES_OPTION, JOptionPane.showConfirmDialog(null, "does right panel display p2b?"));
+	}
+	
 }
 
 class TestMFrame extends JFrame
