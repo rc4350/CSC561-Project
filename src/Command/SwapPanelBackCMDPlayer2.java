@@ -3,12 +3,12 @@ package Command;
 import UI.MainBattleScreen;
 import UI.SwapPanel;
 
-public class SwapPanelBackCMDPlayer1 implements CommandInterface
+public class SwapPanelBackCMDPlayer2 implements CommandInterface
 {
 	private MainBattleScreen battleFrame;
 	private SwapPanel swap;
 	//TODO update with BattleFrame class
-	public SwapPanelBackCMDPlayer1(MainBattleScreen mbs, SwapPanel sp)
+	public SwapPanelBackCMDPlayer2(MainBattleScreen mbs, SwapPanel sp)
 	{
 		battleFrame = mbs;
 		swap = sp;
@@ -17,7 +17,7 @@ public class SwapPanelBackCMDPlayer1 implements CommandInterface
 	@Override
 	public void execute()
 	{
-		battleFrame.updatePlayer1Panel(1);
+		battleFrame.updatePlayer2Panel(1);
 		swap.setSelected(null);
 		swap.setEnablesInitial();
 		
