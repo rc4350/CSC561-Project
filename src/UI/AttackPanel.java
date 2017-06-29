@@ -28,7 +28,7 @@ public class AttackPanel implements ActionListener
 	
 	private ImageIcon pokemonIcon;
 	private JButton attackButton1, attackButton2, attackButton3, attackButton4;
-	private JButton backButton;
+	public JButton backButton;
 	
 	private CommandInterface BtnAttack1Command;
 	private CommandInterface BtnAttack2Command;
