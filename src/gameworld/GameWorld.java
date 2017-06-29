@@ -1,6 +1,10 @@
 package gameworld;
 
+import java.awt.GridLayout;
 import java.util.ArrayList;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 import Attack.Attack;
 import player.Player;
@@ -309,11 +313,13 @@ public class GameWorld
 		{
 			player2.changeActive(p2Pokemon);
 			player2.getActive().takeHit(p1Attack);
+			checkWin();
 		}
 		else if( player1Action ==2 && player2Action == 1)
 		{
 			player1.changeActive(p1Pokemon);
 			player1.getActive().takeHit(p2Attack);
+			checkWin();
 		}
 		else if (player1Action ==2 && player2Action == 2)
 		{
@@ -342,9 +348,11 @@ public class GameWorld
 	private void playerOneAttackFirst()
 	{
 		player2.getActive().takeHit(p1Attack);
+		checkWin();
 		if(player2.getActive().getCurrentHP() > 0)
 		{
 			player1.getActive().takeHit(p2Attack);
+			checkWin();
 			if(player1.getActive().getCurrentHP() == 0)
 			{
 				battleScreen.updatePlayer1Panel(2);
@@ -360,9 +368,11 @@ public class GameWorld
 	private void playerTwoAttackFirst()
 	{
 		player1.getActive().takeHit(p2Attack);
+		checkWin();
 		if(player1.getActive().getCurrentHP() > 0)
 		{
 			player2.getActive().takeHit(p1Attack);
+			checkWin();
 			if(player2.getActive().getCurrentHP() == 0)
 			{
 				battleScreen.updatePlayer2Panel(2);
@@ -374,6 +384,32 @@ public class GameWorld
 			battleScreen.updatePlayer1Panel(2);
 			knockoutSwapPlayer1();
 		}
+	}
+
+	/**
+	 * checks if a player has won.
+	 */
+	public void checkWin()
+	{
+		if(player1.getPokemon(0).getCurrentHP() == 0 && player1.getPokemon(1).getCurrentHP() == 0 && player1.getPokemon(2).getCurrentHP() == 0)
+		{
+			JFrame winframe = new JFrame();
+			winframe.setLayout(new GridLayout(1,1));
+			winframe.add(new JLabel("player 2 wins"));
+			winframe.pack();
+			winframe.setVisible(true);
+			
+		}
+		else if(player2.getPokemon(0).getCurrentHP() == 0 && player2.getPokemon(1).getCurrentHP() == 0 && player2.getPokemon(2).getCurrentHP() == 0)
+		{
+			JFrame winframe = new JFrame();
+			winframe.setLayout(new GridLayout(1,1));
+			winframe.add(new JLabel("player 1 wins"));
+			winframe.pack();
+			winframe.setVisible(true);
+			
+		}
+		
 	}
 	
 }

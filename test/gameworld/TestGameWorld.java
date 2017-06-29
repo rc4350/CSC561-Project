@@ -6,6 +6,7 @@ import java.awt.GridLayout;
 import java.io.IOException;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import org.junit.Before;
@@ -222,4 +223,52 @@ public class TestGameWorld
 		assertFalse(test.getPlayer1ReadyStatus());
 		assertFalse(test.getPlayer2ReadyStatus());
 	}	
+	@Test
+	public void testPlayer1Win() throws IOException
+	{
+		GameWorld test = GameWorld.getInstance();
+		PokemonFactory pf = new PokemonFactory();
+		Player p1 = new Player();
+		Player p2 = new Player();
+		test.addPlayer1(p1);
+		test.addPlayer2(p2);
+		p1.addPokemon(pf.getBlastoise());
+		p1.addPokemon(pf.getBulbasaur());
+		p1.addPokemon(pf.getCaterpie());
+		p2.addPokemon(pf.getCharmander());
+		p2.addPokemon(pf.getVenuSaur());
+		p2.addPokemon(pf.getVulpix());
+		
+		test.checkWin();
+		p2.getPokemon(0).setCurrentHP(0);
+		p2.getPokemon(1).setCurrentHP(0);
+		p2.getPokemon(2).setCurrentHP(0);
+		test.checkWin();
+		assertEquals(JOptionPane.YES_OPTION, JOptionPane.showConfirmDialog(null, "new frame says player 1 win?"));
+		
+		
+	}
+	
+	@Test
+	public void testPlayer2Win() throws IOException
+	{
+		GameWorld test = GameWorld.getInstance();
+		PokemonFactory pf = new PokemonFactory();
+		Player p1 = new Player();
+		Player p2 = new Player();
+		test.addPlayer1(p1);
+		test.addPlayer2(p2);
+		p1.addPokemon(pf.getBlastoise());
+		p1.addPokemon(pf.getBulbasaur());
+		p1.addPokemon(pf.getCaterpie());
+		p2.addPokemon(pf.getCharmander());
+		p2.addPokemon(pf.getVenuSaur());
+		p2.addPokemon(pf.getVulpix());
+		test.checkWin();
+		p1.getPokemon(0).setCurrentHP(0);
+		p1.getPokemon(1).setCurrentHP(0);
+		p1.getPokemon(2).setCurrentHP(0);
+		test.checkWin();
+		assertEquals(JOptionPane.YES_OPTION, JOptionPane.showConfirmDialog(null, "new frame says player 2 win?"));
+	}
 }
