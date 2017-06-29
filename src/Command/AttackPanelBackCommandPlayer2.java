@@ -3,6 +3,10 @@ package Command;
 import UI.AttackPanel;
 import UI.MainBattleScreen;
 
+/**
+* Attack Panel back command for player2
+*@author DeemacAlrashdan, Ryan Campbell
+*/
 public class AttackPanelBackCommandPlayer2 implements CommandInterface
 {
 	private MainBattleScreen battleFrame;

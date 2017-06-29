@@ -4,6 +4,10 @@ package Command;
 import Attack.Attack;
 import UI.AttackPanel;
 import gameworld.GameWorld;
+/**
+* AttackPanel command player1
+*@author DeemacAlrashdan, Ryan Campbell
+*/
 
 public class AttackPanelAttackCMDPlayer1 implements CommandInterface
 {

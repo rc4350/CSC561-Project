@@ -3,6 +3,10 @@ package Command;
 import UI.AttackPanel;
 import gameworld.GameWorld;
 
+/**
+* AttackPanel 2 CMD Builder
+*@author DeemacAlrashdan, Ryan Campbell
+*/
 public class AttackPanel2CommandBuilder 
 {
 	public AttackPanel2CommandBuilder(AttackPanel ap)
